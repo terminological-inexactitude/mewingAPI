@@ -37,7 +37,7 @@ int main()
             s = "🦩";
             break;
         case 7:
-            s = "🫨";
+            s = "haha piss🫨";
             break;
         case 8:
             s = "🤡";
