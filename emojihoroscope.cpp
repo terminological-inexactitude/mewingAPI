@@ -37,7 +37,7 @@ int main()
             s = "🦩";
             break;
         case 7:
-            s = "haha piss🫨";
+            s = "🫨";
             break;
         case 8:
             s = "🤡";
@@ -49,7 +49,7 @@ int main()
             s = "🫃";
             break;
         case 11:
-            s = "🎮🕹️🖥️";
+            s = "🎮🕹️🖥️"; // geeked up 
             break;
         case 12:
             s = "😈";
@@ -88,7 +88,7 @@ int main()
             s = "🇫🇷";
             break;
         case 24:
-            s = "🤡";
+            s = "🗿";
             break;
         case 25:
             s = "👩‍❤️‍💋‍👩";
