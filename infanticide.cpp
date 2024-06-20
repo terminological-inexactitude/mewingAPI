@@ -21,6 +21,9 @@ int main() {
     char current_player = 'X';
     int row, col;
 
+    printf("%c \n", getvar[0]);
+    printf("%c \n", getvar[2]);
+
     // Initialize the board from saved state
     const char* game_state = getvar;
     for (int i = 0; i < 9; ++i) {
@@ -59,7 +62,7 @@ int main() {
         new_game_state[9] = '\0';
         printf("{setuser:game_state|%s}", new_game_state);
     } else {
-        printf("Invalid move! Please try again.\n");
+        printf("Invalid move! Please try again. Womp Womp\n");
     }
 
     return 0;
