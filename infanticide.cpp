@@ -21,17 +21,20 @@ int main() {
     char current_player = 'X';
     int row, col;
 
-    // Initialize the board
-    sscanf(getvar, "%c%c%c%c%c%c%c%c%c",
-        &board[0][0], &board[0][1], &board[0][2],
-        &board[1][0], &board[1][1], &board[1][2],
-        &board[2][0], &board[2][1], &board[2][2]);
+    // Initialize the board from saved state
+    const char* game_state = getvar;
+    for (int i = 0; i < 9; ++i) {
+        board[i / 3][i % 3] = game_state[i];
+    }
 
     // Parse input from Discord command
-    sscanf(input, "%d %d", &row, &col);
-
-    row--; // Adjust for 0-based index
-    col--; // Adjust for 0-based index
+    if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3') {
+        row = input[0] - '1'; // Convert '1'-'3' to 0-2
+        col = input[2] - '1'; // Convert '1'-'3' to 0-2
+    } else {
+        printf("Invalid input format! Please use the format: 1 2\n");
+        return 1;
+    }
 
     // Check if the move is valid
     if (is_valid_move(row, col, board)) {
@@ -49,7 +52,12 @@ int main() {
         }
 
         // Save updated game state back to Discord
-        printf("%s", setvar);
+        char new_game_state[10];
+        for (int i = 0; i < 9; ++i) {
+            new_game_state[i] = board[i / 3][i % 3];
+        }
+        new_game_state[9] = '\0';
+        printf("{setuser:game_state|%s}", new_game_state);
     } else {
         printf("Invalid move! Please try again.\n");
     }
