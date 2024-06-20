@@ -6,7 +6,6 @@
 
 // Define for setting and getting game state in Discord
 #define setvar "{setuser:game_state|_________}"
-
 #define getvar "{getuser:game_state}"
 
 // Function prototypes
@@ -21,13 +20,18 @@ int main() {
     char current_player = 'X';
     int row, col;
 
-    printf("%c \n", getvar[0]);
-    printf("%c \n", getvar[2]);
-
-    // Initialize the board from saved state
+    // Initialize the board from saved state or set to underscores if no state
     const char* game_state = getvar;
-    for (int i = 0; i < 9; ++i) {
-        board[i / 3][i % 3] = game_state[i];
+    if (strlen(game_state) != 9) {
+        // If game_state is not properly initialized, set to underscores
+        #define setvar "{setuser:game_state|_________}"
+        for (int i = 0; i < 9; ++i) {
+            board[i / 3][i % 3] = '_';
+        }
+    } else {
+        for (int i = 0; i < 9; ++i) {
+            board[i / 3][i % 3] = game_state[i];
+        }
     }
 
     // Parse input from Discord command
@@ -62,7 +66,7 @@ int main() {
         new_game_state[9] = '\0';
         printf("{setuser:game_state|%s}", new_game_state);
     } else {
-        printf("Invalid move! Please try again. Womp Womp\n");
+        printf("Invalid move!! Please try again.\n");
     }
 
     return 0;
@@ -82,7 +86,7 @@ void print_board(char board[3][3]) {
 
 bool is_valid_move(int row, int col, char board[3][3]) {
     // Check if the chosen cell is empty and within bounds
-    return (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == ' ');
+    return (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == '_');
 }
 
 bool check_winner(char board[3][3], char player) {
@@ -107,7 +111,7 @@ bool is_board_full(char board[3][3]) {
     // Check if the board is full
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
-            if (board[i][j] == ' ') {
+            if (board[i][j] == '_') {
                 return false; // Found an empty space
             }
         }
