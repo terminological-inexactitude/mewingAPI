@@ -5,6 +5,7 @@
 #define input "{args}"
 
 // Define for setting and getting game state in Discord
+#define setvar "{setuser:game_state|%s}"
 #define getvar "{getuser:game_state}"
 
 // Function prototypes
@@ -52,10 +53,10 @@ int main() {
         // Check if current player wins
         if (check_winner(board, current_player)) {
             printf("Player %c wins!\n", current_player);
-            printf("{setuser:game_state|_________}"); // Reset the board
+            printf(setvar, "_________"); // Reset the board
         } else if (is_board_full(board)) {
             printf("It's a draw!\n");
-            printf("{setuser:game_state|_________}"); // Reset the board
+            printf(setvar, "_________"); // Reset the board
         } else {
             // Save updated game state back to Discord
             char new_game_state[10];
@@ -63,7 +64,7 @@ int main() {
                 new_game_state[i] = board[i / 3][i % 3];
             }
             new_game_state[9] = '\0';
-            printf("{setuser:game_state|%s}", new_game_state);
+            printf(setvar, new_game_state);
         }
     } else {
         printf("Invalid move! Please try again.\n");
