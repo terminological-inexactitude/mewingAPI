@@ -15,14 +15,14 @@ int main ()
     oneDArray[10] = '\0'; 
     int row, col;
 
-    printf("jaa uhhhh \n \n"); 
-
     // READ USER INPUT
-    if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
+    if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3')
+	{
         row = input[0] - '1';
         col = input[2] - '1';
     } 
-    else if(input == "restart" || input == "reset" || input == "stop"){
+    else if(input == "restart" || input == "reset" || input == "stop")
+	{
 		printf("Board cleared! Start a new game :)"); 
 		char clear[11] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '0', '\0'}; 
 		write_var(clear);
@@ -34,7 +34,8 @@ int main ()
     }
 
     // READ ARRAY 
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < 3; ++i)
+	{
         for (int j = 0; j < 3; ++j) {
             if(getvar[i * 3 + j] == 'E'){
                 board[i][j] = ' ';
@@ -61,8 +62,10 @@ int main ()
     printf("\n");
 
     // READ BOARD
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
+    for (int i = 0; i < 3; ++i)
+	{
+        for (int j = 0; j < 3; ++j)
+		{
             oneDArray[i * 3 + j] = board[i][j];
         }
     }
@@ -75,11 +78,13 @@ int main ()
     return 0;
 }
 
-void update_board(int row, int col, char mark, char board[3][3]) {
+void update_board(int row, int col, char mark, char board[3][3])
+{
     board[row][col] = mark;
 }
 
-void write_var(char array[]){
+void write_var(char array[])
+{
 	std::string filename = "./output/__internals__.json";
 	std::ofstream file(filename);
 	std::string jsonString = std::string(R"({
