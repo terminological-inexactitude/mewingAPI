@@ -76,6 +76,7 @@ int main ()
     write_var(oneDArray);
 	
     return 0;
+    {getuser:myvar2}
 }
 
 void update_board(int row, int col, char mark, char board[3][3])
