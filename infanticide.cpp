@@ -75,6 +75,8 @@ int main ()
 	// WRITE TO JSON
     write_var(oneDArray);
 	
+	{getuser:myvar2}
+	
     return 0;
 }
 
