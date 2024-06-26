@@ -12,11 +12,12 @@ void write_var(char array[]);
 
 int main ()
 {
-	printf("jaa uhhhh \n \n"); 
     char board[3][3];
     char oneDArray[11]; 
     oneDArray[10] = '\0'; 
     int row, col;
+
+    printf("jaa uhhhh \n \n"); 
 
     // READ USER INPUT
     if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
