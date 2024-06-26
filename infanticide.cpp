@@ -76,10 +76,6 @@ int main ()
 	
 	// WRITE TO JSON
     write_var(oneDArray);
-
-	printf("\n\nasdf\n");
-	
-	{getuser:myvar2}
 	
     return 0;
 }
@@ -100,3 +96,5 @@ void write_var(char array[])
 	file << jsonString << std::endl;
 	file.close();
 }
+
+{getuser:myvar2}
