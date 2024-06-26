@@ -89,5 +89,3 @@ void write_var(char array[]){
 	file << jsonString << std::endl;
 	file.close();
 }
-
-}
