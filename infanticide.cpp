@@ -76,6 +76,8 @@ int main ()
 	
 	// WRITE TO JSON
     write_var(oneDArray);
+
+	printf("\n\nasdf\n");
 	
 	{getuser:myvar2}
 	
