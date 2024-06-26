@@ -58,7 +58,7 @@ int main()
             s = "🦄"; // le friendship est magique 
             break;
         case 14:
-            s = "👽";
+            s = "🍀";
             break;
         case 15:
             s = "😎";
