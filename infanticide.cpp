@@ -23,7 +23,7 @@ int main ()
         row = input[0] - '1';
         col = input[2] - '1';
     } 
-    else if(input == "restart" || input == "reset" || input == "stop")
+    else if(input == "restart" || input == "reset" || input == "clear")
 	{
 		printf("Board cleared! Start a new game :)"); 
 		char clear[] = {0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, '0', '\0'};
