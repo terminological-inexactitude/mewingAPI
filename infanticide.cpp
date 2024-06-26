@@ -21,10 +21,10 @@ int main ()
         row = input[0] - '1';
         col = input[2] - '1';
     } 
-    else if(input == "restart" || input == "reset" || input == "new")
+    else if(input == "restart" || input == "reset" || input == "stop")
 	{
 		printf("Board cleared! Start a new game :)"); 
-		char clear[11] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '0', '\0'}; 
+		char clear[11] = {0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, '0', '\0'};
 		write_var(clear);
         return 1;
     }
@@ -48,7 +48,7 @@ int main ()
 
 	update_board(row, col, 'X', board);
 	
-	update_board(3, 3, 'O', board); // simulated bot
+	update_board(2, 1, 'O', board); // simulated bot
 
     // PRINT BOARD TO DISPLAY
     printf("\n");
@@ -76,7 +76,6 @@ int main ()
     write_var(oneDArray);
 	
     return 0;
-    {getuser:myvar2}
 }
 
 void update_board(int row, int col, char mark, char board[3][3])
