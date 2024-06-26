@@ -24,7 +24,7 @@ int main ()
     else if(input == "restart" || input == "reset" || input == "stop")
 	{
 		printf("Board cleared! Start a new game :)"); 
-		char clear[11] = {0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, '0', '\0'};
+		char clear[] = {0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, '0', '\0'};
 		write_var(clear);
         return 1;
     }
