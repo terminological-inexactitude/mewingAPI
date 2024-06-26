@@ -98,5 +98,3 @@ void write_var(char array[])
 
 	std::cout << "Successfully wrote to the file: " << filename << std::endl;
 }
-
-{getuser:myvar2}
