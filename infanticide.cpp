@@ -46,9 +46,11 @@ int main ()
         }
     }
 
-	update_board(row, col, 'X', board);
+	// PLAYER MOVE
+	update_board(row, col, 'X', board); 
 	
-	update_board(2, 1, 'O', board); // simulated bot
+	// AI MOVE
+	update_board(3, 3, 'O', board); // hardcoded move for now
 
     // PRINT BOARD TO DISPLAY
     printf("\n");
