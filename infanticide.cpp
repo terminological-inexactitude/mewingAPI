@@ -47,8 +47,10 @@ int main ()
     }
 
 	update_board(row, col, 'X', board);
+	
+	update_board(2, 1, 'O', board); // simulated bot
 
-    // PRINT TO DISPLAY
+    // PRINT BOARD TO DISPLAY
     printf("\n");
     printf("```");
     printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]);
