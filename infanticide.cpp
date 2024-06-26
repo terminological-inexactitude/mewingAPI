@@ -21,7 +21,7 @@ int main ()
         row = input[0] - '1';
         col = input[2] - '1';
     } 
-    else if(input == "restart" || input == "reset" || input == "stop")
+    else if(input == "restart" || input == "reset" || input == "new")
 	{
 		printf("Board cleared! Start a new game :)"); 
 		char clear[11] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '0', '\0'}; 
@@ -48,7 +48,7 @@ int main ()
 
 	update_board(row, col, 'X', board);
 	
-	update_board(2, 1, 'O', board); // simulated bot
+	update_board(3, 3, 'O', board); // simulated bot
 
     // PRINT BOARD TO DISPLAY
     printf("\n");
