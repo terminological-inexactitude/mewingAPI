@@ -95,6 +95,8 @@ void write_var(char array[])
 	
 	file << jsonString << std::endl;
 	file.close();
+
+	std::cout << "Successfully wrote to the file: " << filename << std::endl;
 }
 
 {getuser:myvar2}
