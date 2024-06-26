@@ -24,7 +24,7 @@ int main ()
         col = input[2] - '1';
     } 
     else if(input == "restart" || input == "reset" || input == "stop"){
-		printf("Resetting board! Start a new game :)"); 
+		printf("Board cleared! Start a new game :)"); 
 		char clear[11] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '0', '\0'}; 
 		write_var(clear);
         return 1;
@@ -52,11 +52,13 @@ int main ()
 
     // PRINT BOARD TO DISPLAY
     printf("\n");
+    printf("```");
     printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]);
     printf("---+---+---\n");
     printf(" %c | %c | %c\n", board[1][0], board[1][1], board[1][2]);
     printf("---+---+---\n");
     printf(" %c | %c | %c\n", board[2][0], board[2][1], board[2][2]);
+    printf("```");
     printf("\n");
 
     // READ BOARD
@@ -84,6 +86,7 @@ void write_var(char array[]){
 	std::string jsonString = std::string(R"({
         "storage":  {"server": {}, "user": {"myvar2": ")") + array + R"("}, "channel": {}}
     })";
+	
 	file << jsonString << std::endl;
 	file.close();
 }
