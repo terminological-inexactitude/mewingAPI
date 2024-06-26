@@ -12,19 +12,21 @@ void write_var(char array[]);
 
 int main ()
 {
+	printf("jaa uhhhh \n \n"); 
     char board[3][3];
     char oneDArray[11]; 
     oneDArray[10] = '\0'; 
     int row, col;
 
-    // READ INPUT
+    // READ USER INPUT
     if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
         row = input[0] - '1';
         col = input[2] - '1';
     } 
-    else if(input == "restart"){
-	char clear[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '0', '\0'};
-	write_var(clear)
+    else if(input == "restart" || input == "reset" || input == "stop"){
+		printf("Resetting board! Start a new game :)"); 
+		char clear[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '0', '\0'};
+		write_var(clear)
         return 1;
     }
     else{
@@ -65,6 +67,8 @@ int main ()
     }
 	
     oneDArray[9] = '1';
+	
+	// WRITE TO JSON
     write_var(oneDArray);
 	
     return 0;
