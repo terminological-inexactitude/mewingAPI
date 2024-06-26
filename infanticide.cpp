@@ -74,8 +74,8 @@ int main ()
     return 0;
 }
 
-void update_board(int row, int col, char player, char board[3][3]) {
-    board[row][col] = player;
+void update_board(int row, int col, char mark, char board[3][3]) {
+    board[row][col] = mark;
 }
 
 void write_var(char array[]){
