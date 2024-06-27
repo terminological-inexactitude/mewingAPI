@@ -42,10 +42,12 @@ int main ()
             }
         }
     }
-
+	
+	// PLAYER MOVE
 	update_board(row, col, 'X', board);
 	
-	update_board(2, 1, 'O', board); // simulated bot
+	// BOT MOVE
+	update_board(2, 1, 'O', board); 
 
     // PRINT BOARD TO DISPLAY
     printf("\n");
@@ -61,8 +63,12 @@ int main ()
     // READ BOARD
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
-            oneDArray[i * 3 + j] = board[i][j];
-        }
+			if(board[i][j] == ' '){
+				oneDArray[i * 3 + j] = 'E';
+			else{
+				oneDArray[i * 3 + j] = board[i][j];
+			}
+		}
     }
 	
     oneDArray[9] = '1';
@@ -89,7 +95,7 @@ void write_var(char array[]){
 }
 
 void clear_board(){
-	printf("Board cleared! Start a new game :)"); 
+	printf("Board cleared! Start a new game 🕹"); 
 	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
 	write_var(clear);
 }
