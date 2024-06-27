@@ -25,7 +25,8 @@ int main ()
         row = input[0] - '1';
         col = input[2] - '1';
     } 
-    else if(input == "restart" || input == "reset" || input == "clear" || input == "new"){
+    else if(input == "restart" || input == "reset" || input == "clear" || input == "new"){	
+		printf("\nBoard cleared! Ready for a new game 🕹");
 		clear_board();
         return 1;
     }
@@ -45,6 +46,9 @@ int main ()
             }
         }
     }
+	
+	// check if player doesnt overwrite a previous one
+	
 	
 	// PLAYER MOVE
 	update_board(row, col, 'X', board);
@@ -145,7 +149,6 @@ void update_board(int row, int col, char mark, char board[3][3]) {
 
 void clear_board(){
 	// clear the board and write emtpy board to JSON
-	printf("\nBoard cleared! Ready for a new game 🕹");
 	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
 	write_var(clear);
 }
