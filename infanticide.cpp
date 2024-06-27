@@ -29,7 +29,7 @@ int main ()
         return 1;
     }
     else{
-        printf("Invalid input format:bangbang: use .t tictactoe 1 3 for example\n");
+        printf("Invalid input format:bangbang:\nUse .t tictactoe 1 3 for example\n");
         return 1;
     }
 
@@ -124,7 +124,7 @@ void update_board(int row, int col, char mark, char board[3][3]) {
 
 void clear_board(){
 	// clear the board and write emtpy board to JSON
-	printf("\nBoard cleared! Start a new game :interrobang: 🕹"); 
+	printf("\nBoard cleared! Start a new game :interrobang:"); // 🕹
 	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
 	write_var(clear);
 }
