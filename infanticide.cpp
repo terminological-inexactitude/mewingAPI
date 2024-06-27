@@ -65,6 +65,7 @@ int main ()
         for (int j = 0; j < 3; ++j) {
 			if(board[i][j] == ' '){
 				oneDArray[i * 3 + j] = 'E';
+			}
 			else{
 				oneDArray[i * 3 + j] = board[i][j];
 			}
