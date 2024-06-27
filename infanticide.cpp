@@ -8,8 +8,9 @@
 
 bool check_winner(char board[3][3], char player);
 void update_board(int row, int col, char player, char board[3][3]);
-void write_var(char array[]);
 void clear_board();
+void write_var(char array[]);
+void bot_move();
 
 int main ()
 {
@@ -18,8 +19,6 @@ int main ()
     oneDArray[10] = '\0'; 	// null terminator 
     int row, col;
 	
-	printf("\nasdfasf\n");
-
     // READ USER INPUT
     if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
         row = input[0] - '1';
@@ -50,7 +49,7 @@ int main ()
 	update_board(row, col, 'X', board);
 	
 	// BOT MOVE
-	update_board(2, 1, 'O', board); // hardcoded move for now
+	bot_move();
 
     // PRINT BOARD TO DISPLAY
     printf("\n");
@@ -66,10 +65,14 @@ int main ()
 	// CHECK WINNER 
 	 if (check_winner(board, 'X')) {
 		printf("\nYOU WIN!\n");
+		clear_board();
+		return 1;
 	 }
 	
 	if (check_winner(board, 'O')) {
 		printf("\nYOU LOSE!\n");
+		clear_board();
+		return 1;
 	}
 
     // READ BOARD
@@ -90,6 +93,10 @@ int main ()
     write_var(oneDArray);
 	
     return 0;
+}
+
+void bot_move(){
+	update_board(2, 1, 'O', board); // hardcoded move for now
 }
 
 bool check_winner(char board[3][3], char player) {
@@ -114,6 +121,13 @@ void update_board(int row, int col, char mark, char board[3][3]) {
     board[row][col] = mark;
 }
 
+void clear_board(){
+	// clear the board and write emtpy board to JSON
+	printf("Board cleared! Start a new game 🕹"); 
+	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
+	write_var(clear);
+}
+
 void write_var(char array[]){
 	std::string filename = "./output/__internals__.json";
 	std::ofstream file(filename);
@@ -125,9 +139,4 @@ void write_var(char array[]){
 	file.close();
 }
 
-void clear_board(){
-	printf("Board cleared! Start a new game 🕹"); 
-	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
-	write_var(clear);
-}
 
