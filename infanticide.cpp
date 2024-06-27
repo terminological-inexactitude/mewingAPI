@@ -6,6 +6,7 @@
 #define input "{args}"
 #define getvar "{getuser:myvar2}"
 
+bool check_winner(char board[3][3], char player);
 void update_board(int row, int col, char player, char board[3][3]);
 void write_var(char array[]);
 void clear_board();
