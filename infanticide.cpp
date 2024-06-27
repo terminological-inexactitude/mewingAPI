@@ -124,7 +124,7 @@ void update_board(int row, int col, char mark, char board[3][3]) {
 
 void clear_board(){
 	// clear the board and write emtpy board to JSON
-	printf("Board cleared! Start a new game :interrobang: 🕹"); 
+	printf("\nBoard cleared! Start a new game :interrobang: 🕹"); 
 	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
 	write_var(clear);
 }
