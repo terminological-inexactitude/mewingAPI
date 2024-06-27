@@ -13,7 +13,7 @@ void clear_board();
 void write_var(char array[]);
 
 int main ()
-{
+
     char board[3][3];
     char oneDArray[11];
     oneDArray[10] = '\0';
