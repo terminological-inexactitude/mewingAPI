@@ -15,9 +15,9 @@ void write_var(char array[]);
 
 int main ()
 {
-    char board[3][3];		// playing board
-    char oneDArray[11];		// playing board in 1D format to write to JSON
-    oneDArray[10] = '\0'; 	// null terminator 
+    char board[3][3];
+    char oneDArray[11];
+    oneDArray[10] = '\0';
     int row, col;
 	
     // READ USER INPUT
@@ -62,7 +62,6 @@ int main ()
     }
 	
 	// check if player doesnt overwrite a previous one
-	
 	
 	// PLAYER MOVE
 	update_board(row, col, 'X', board);
@@ -142,7 +141,6 @@ bool check_winner(char board[3][3], char player) {
 }
 
 bool is_board_full(char board[3][3]) {
-    // check if the board is full
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             if (board[i][j] == ' ') {
@@ -154,7 +152,7 @@ bool is_board_full(char board[3][3]) {
 }
 
 void bot_move(char board[3][3]){
-	update_board(2, 1, 'O', board); // hardcoded move for now
+	update_board(2, 1, 'O', board);
 }
 
 void update_board(int row, int col, char mark, char board[3][3]) {
@@ -162,13 +160,11 @@ void update_board(int row, int col, char mark, char board[3][3]) {
 }
 
 void clear_board(){
-	// clear the board and write emtpy board to JSON
 	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
 	write_var(clear);
 }
 
 void write_var(char array[]){
-	// thanks warden xoxo
 	std::string filename = "./output/__internals__.json";
 	std::ofstream file(filename);
 	std::string jsonString = std::string(R"({
