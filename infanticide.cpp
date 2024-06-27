@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -10,7 +11,7 @@ void write_var(char array[]);
 
 int main ()
 {
-	printf("jaa uhhhh \n \n"); 
+	printf("\njaa uhhhh \n \n"); 
     char board[3][3];
     char oneDArray[11]; 
     oneDArray[10] = '\0'; 
@@ -89,4 +90,3 @@ void write_var(char array[]){
 	file.close();
 }
 
-}
