@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -18,7 +17,7 @@ int main ()
     char board[3][3];
     char oneDArray[11];
     oneDArray[10] = '\0';
-    int row, col;
+    short row, col;
 	
     // READ USER INPUT
     if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
@@ -45,7 +44,7 @@ int main ()
         return 1;
     }
     else{
-        printf("Invalid input format:bangbang: use 'row' 'column'\nSo `.t tictactoe 1 3` for example\n");
+        printf("Invalid input format! !se 'row' 'column'\nSo `.t tictactoe 1 3` for example\n");
         return 1;
     }
 
@@ -143,7 +142,7 @@ bool check_winner(char board[3][3], char player) {
 bool is_board_full(char board[3][3]) {
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
-            if (board[i][j] == ' ') {
+            if (board[i][j] == ' ' || board[i][j] == 'E') {
                 return false; // found an empty space
             }
         }
@@ -174,5 +173,3 @@ void write_var(char array[]){
 	file << jsonString << std::endl;
 	file.close();
 }
-
-
