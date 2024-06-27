@@ -1,5 +1,3 @@
-.t add test {C++:
-
 #include <iostream>
 #include <fstream>
 #include <cstring>
