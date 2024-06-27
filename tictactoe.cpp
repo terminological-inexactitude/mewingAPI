@@ -24,7 +24,7 @@ int main ()
 		row = input[0] - '1';
         col = input[2] - '1';
     } 
-    else if(input == "restart" || input == "reset" || input == "clear" || input == "new"){	
+    else if(input == "clear"){	
 		printf("\nBoard cleared! Ready for a new game 🕹");
 		clear_board();
         return 1;
