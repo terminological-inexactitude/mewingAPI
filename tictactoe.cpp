@@ -23,20 +23,6 @@ int main ()
     if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
 		row = input[0] - '1';
         col = input[2] - '1';
-		
-		if(row == 1){
-			row = 3;
-		}
-		}else if(row == 3){
-			row = 1;
-		}
-		
-		if(col == 1){
-			col = 3;
-		}
-		}else if(col == 3){
-			col = 1;
-		}
     } 
     else if(input == "restart" || input == "reset" || input == "clear" || input == "new"){	
 		printf("\nBoard cleared! Ready for a new game 🕹");
