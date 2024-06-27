@@ -8,10 +8,10 @@
 
 void update_board(int row, int col, char player, char board[3][3]);
 void write_var(char array[]);
+void clear_board();
 
 int main ()
 {
-	printf("\njaa uhhhh \n \n"); 
     char board[3][3];
     char oneDArray[11]; 
     oneDArray[10] = '\0'; 
@@ -22,10 +22,8 @@ int main ()
         row = input[0] - '1';
         col = input[2] - '1';
     } 
-    else if(input == "restart" || input == "reset" || input == "stop"){
-		printf("Board cleared! Start a new game :)"); 
-		char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
-		write_var(clear);
+    else if(input == "restart" || input == "reset" || input == "clear" || input == "new"){
+		clear_board();
         return 1;
     }
     else{
@@ -34,8 +32,8 @@ int main ()
     }
 
     // READ ARRAY 
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
+    for (int i = 0; i < 3; ++i){
+        for (int j = 0; j < 3; ++j){
             if(getvar[i * 3 + j] == 'E'){
                 board[i][j] = ' ';
             }
@@ -88,5 +86,11 @@ void write_var(char array[]){
 	
 	file << jsonString << std::endl;
 	file.close();
+}
+
+void clear_board(){
+	printf("Board cleared! Start a new game :)"); 
+	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
+	write_var(clear);
 }
 
