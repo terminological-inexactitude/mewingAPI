@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <cstring>
 
 #define input "{args}"
 #define getvar "{getuser:myvar2}"
@@ -63,19 +62,19 @@ int main ()
     printf("\n");
 
 	 if (check_winner(board, 'X')) {
-		printf("\nYOU WIN!\n");
+		printf("\nYOU WIN!");
 		clear_board();
 		return 1;
 	 }
 	
 	if (check_winner(board, 'O')) {
-		printf("\nYOU LOSE!\n");
+		printf("\nYOU LOSE!");
 		clear_board();
 		return 1;
 	}
 	
 	if (is_board_full(board)){
-		printf("\nIt's a tie!\n");
+		printf("\nIt's a tie!");
 		clear_board();
 		return 1;
 	}
