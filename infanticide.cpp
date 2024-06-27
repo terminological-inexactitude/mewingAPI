@@ -7,6 +7,7 @@
 #define getvar "{getuser:myvar2}"
 
 bool check_winner(char board[3][3], char player);
+bool is_board_full(char board[3][3]);
 void bot_move(char board[3][3]);
 void update_board(int row, int col, char player, char board[3][3]);
 void clear_board();
@@ -62,15 +63,23 @@ int main ()
     printf("```");
     printf("\n");
 
-	// CHECK WINNER 
+	// CHECK PLAYER WINNER 
 	 if (check_winner(board, 'X')) {
 		printf("\nYOU WIN!\n");
 		clear_board();
 		return 1;
 	 }
 	
+	// CHECK BOT WINNER
 	if (check_winner(board, 'O')) {
 		printf("\nYOU LOSE!\n");
+		clear_board();
+		return 1;
+	}
+	
+	// CHECK TIE
+	if (is_board_full(board)){
+		printf("\nIt's a tie!\n");
 		clear_board();
 		return 1;
 	}
@@ -97,7 +106,7 @@ int main ()
 
 
 bool check_winner(char board[3][3], char player) {
-    // Check rows and columns
+    // check rows and columns
     for (int i = 0; i < 3; ++i) {
         if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) ||
             (board[0][i] == player && board[1][i] == player && board[2][i] == player)) {
@@ -105,13 +114,25 @@ bool check_winner(char board[3][3], char player) {
         }
     }
 
-    // Check diagonals
+    // check diagonals
     if ((board[0][0] == player && board[1][1] == player && board[2][2] == player) ||
         (board[0][2] == player && board[1][1] == player && board[2][0] == player)) {
         return true;
     }
 
     return false;
+}
+
+bool is_board_full(char board[3][3]) {
+    // check if the board is full
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            if (board[i][j] == ' ') {
+                return false; // found an empty space
+            }
+        }
+    }
+    return true;
 }
 
 void bot_move(char board[3][3]){
@@ -124,12 +145,13 @@ void update_board(int row, int col, char mark, char board[3][3]) {
 
 void clear_board(){
 	// clear the board and write emtpy board to JSON
-	printf("\nBoard cleared! Start a new game :interrobang:"); // 🕹
+	printf("\nBoard cleared! Ready for a new game 🕹");
 	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
 	write_var(clear);
 }
 
 void write_var(char array[]){
+	// thanks warden xoxo
 	std::string filename = "./output/__internals__.json";
 	std::ofstream file(filename);
 	std::string jsonString = std::string(R"({
