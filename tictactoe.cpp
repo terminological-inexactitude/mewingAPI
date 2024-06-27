@@ -1,0 +1,175 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+
+#define input "{args}"
+#define getvar "{getuser:myvar2}"
+
+bool check_winner(char board[3][3], char player);
+bool is_board_full(char board[3][3]);
+void bot_move(char board[3][3]);
+void update_board(int row, int col, char player, char board[3][3]);
+void clear_board();
+void write_var(char array[]);
+
+int main ()
+{
+    char board[3][3];
+    char oneDArray[11];
+    oneDArray[10] = '\0';
+    short row, col;
+	
+    // READ USER INPUT
+    if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
+		row = input[0] - '1';
+        col = input[2] - '1';
+		
+		if(row == 1){
+			row = 3;
+		}
+		}else if(row == 3){
+			row = 1;
+		}
+		
+		if(col == 1){
+			col = 3;
+		}
+		}else if(col == 3){
+			col = 1;
+		}
+    } 
+    else if(input == "restart" || input == "reset" || input == "clear" || input == "new"){	
+		printf("\nBoard cleared! Ready for a new game 🕹");
+		clear_board();
+        return 1;
+    }
+    else{
+        printf("Invalid input format! !se 'row' 'column'\nSo `.t tictactoe 1 3` for example\n");
+        return 1;
+    }
+
+    // READ ARRAY 
+    for (int i = 0; i < 3; ++i){
+        for (int j = 0; j < 3; ++j){
+            if(getvar[i * 3 + j] == 'E'){
+                board[i][j] = ' ';
+            }
+            else{
+                board[i][j] = getvar[i * 3 + j];
+            }
+        }
+    }
+	
+	// check if player doesnt overwrite a previous one
+	
+	// PLAYER MOVE
+	update_board(row, col, 'X', board);
+	
+	// BOT MOVE
+	bot_move(board);
+
+    // PRINT BOARD TO DISPLAY
+    printf("\n");
+    printf("```");
+    printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]);
+    printf("---+---+---\n");
+    printf(" %c | %c | %c\n", board[1][0], board[1][1], board[1][2]);
+    printf("---+---+---\n");
+    printf(" %c | %c | %c\n", board[2][0], board[2][1], board[2][2]);
+    printf("```");
+    printf("\n");
+
+	// CHECK PLAYER WINNER 
+	 if (check_winner(board, 'X')) {
+		printf("\nYOU WIN!\n");
+		clear_board();
+		return 1;
+	 }
+	
+	// CHECK BOT WINNER
+	if (check_winner(board, 'O')) {
+		printf("\nYOU LOSE!\n");
+		clear_board();
+		return 1;
+	}
+	
+	// CHECK TIE
+	if (is_board_full(board)){
+		printf("\nIt's a tie!\n");
+		clear_board();
+		return 1;
+	}
+
+    // READ BOARD
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+			if(board[i][j] == ' '){
+				oneDArray[i * 3 + j] = 'E';
+			}
+			else{
+				oneDArray[i * 3 + j] = board[i][j];
+			}
+		}
+    }
+	
+    oneDArray[9] = '1';
+	
+	// WRITE TO JSON
+    write_var(oneDArray);
+	
+    return 0;
+}
+
+
+bool check_winner(char board[3][3], char player) {
+    // check rows and columns
+    for (int i = 0; i < 3; ++i) {
+        if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) ||
+            (board[0][i] == player && board[1][i] == player && board[2][i] == player)) {
+            return true;
+        }
+    }
+
+    // check diagonals
+    if ((board[0][0] == player && board[1][1] == player && board[2][2] == player) ||
+        (board[0][2] == player && board[1][1] == player && board[2][0] == player)) {
+        return true;
+    }
+
+    return false;
+}
+
+bool is_board_full(char board[3][3]) {
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            if (board[i][j] == ' ' || board[i][j] == 'E') {
+                return false; // found an empty space
+            }
+        }
+    }
+    return true;
+}
+
+void bot_move(char board[3][3]){
+	update_board(2, 1, 'O', board);
+}
+
+void update_board(int row, int col, char mark, char board[3][3]) {
+    board[row][col] = mark;
+}
+
+void clear_board(){
+	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
+	write_var(clear);
+}
+
+void write_var(char array[]){
+	std::string filename = "./output/__internals__.json";
+	std::ofstream file(filename);
+	std::string jsonString = std::string(R"({
+        "storage":  {"server": {}, "user": {"myvar2": ")") + array + R"("}, "channel": {}}
+    })";
+	
+	file << jsonString << std::endl;
+	file.close();
+}
