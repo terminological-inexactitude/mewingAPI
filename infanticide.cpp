@@ -29,7 +29,7 @@ int main ()
         return 1;
     }
     else{
-        printf("Invalid input format:bangbang:\nUse .t tictactoe 1 3 for example\n");
+        printf("Invalid input format:bangbang:\nUse `.t tictactoe 1 3` for example\n");
         return 1;
     }
 
