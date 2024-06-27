@@ -30,7 +30,7 @@ int main ()
         return 1;
     }
     else{
-        printf("Invalid input format! !se 'row' 'column'\nSo `.t tictactoe 1 3` for example\n");
+        printf("Invalid input format! Use 'row' 'column'\nSo `.t tictactoe 1 3` for example\n");
         return 1;
     }
 
@@ -45,8 +45,6 @@ int main ()
             }
         }
     }
-	
-	// check if player doesnt overwrite a previous one
 	
 	// PLAYER MOVE
 	update_board(row, col, 'X', board);
