@@ -25,12 +25,12 @@ int main ()
         col = input[2] - '1';
     } 
     else if(input == "clear"){	
-		printf("\nBoard cleared! Ready for a new game 🕹");
+		printf("\nBoard cleared!");
 		clear_board();
         return 1;
     }
     else{
-        printf("Invalid input format! Use 'row' 'column'\nSo `.t tictactoe 1 3` for example\n");
+        printf("Invalid input format! Use 'row' 'column'");
         return 1;
     }
 
