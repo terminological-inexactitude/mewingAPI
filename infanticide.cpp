@@ -114,12 +114,12 @@ bool check_winner(char board[3][3], char player) {
     return false;
 }
 
-void update_board(int row, int col, char mark, char board[3][3]) {
-    board[row][col] = mark;
-}
-
 void bot_move(char board[3][3]){
 	update_board(2, 1, 'O', board); // hardcoded move for now
+}
+
+void update_board(int row, int col, char mark, char board[3][3]) {
+    board[row][col] = mark;
 }
 
 void clear_board(){
@@ -139,4 +139,5 @@ void write_var(char array[]){
 	file << jsonString << std::endl;
 	file.close();
 }
+
 
