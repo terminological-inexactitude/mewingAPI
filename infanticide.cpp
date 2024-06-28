@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <cstring>
 
 #define input "{args}"
 #define getvar "{getuser:myvar2}"
@@ -10,41 +9,26 @@ bool is_board_full(char board[3][3]);
 void bot_move(char board[3][3]);
 void update_board(int row, int col, char player, char board[3][3]);
 void clear_board();
-void write_var(char array[]);
+void write_var_new(const char array[])
 
 int main ()
-
+{
     char board[3][3];
-    char oneDArray[11];
-    oneDArray[10] = '\0';
+    char oneDArray[10];
+    oneDArray[9] = '\0';
     short row, col;
 	
-    // READ USER INPUT
     if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
 		row = input[0] - '1';
         col = input[2] - '1';
-		
-		if(row == 1){
-			row = 3;
-		}
-		}else if(row == 3){
-			row = 1;
-		}
-		
-		if(col == 1){
-			col = 3;
-		}
-		}else if(col == 3){
-			col = 1;
-		}
     } 
-    else if(input == "restart" || input == "reset" || input == "clear" || input == "new"){	
-		printf("\nBoard cleared! Ready for a new game 🕹");
+    else if(input == "clear"){	
+		printf("\nBoard cleared!");
 		clear_board();
         return 1;
     }
     else{
-        printf("Invalid input format! !se 'row' 'column'\nSo `.t tictactoe 1 3` for example\n");
+        printf("Invalid input format! Use 'row' 'column'");
         return 1;
     }
 
@@ -60,15 +44,13 @@ int main ()
         }
     }
 	
-	// check if player doesnt overwrite a previous one
-	
 	// PLAYER MOVE
 	update_board(row, col, 'X', board);
 	
 	// BOT MOVE
 	bot_move(board);
 
-    // PRINT BOARD TO DISPLAY
+    // PRINT BOARD
     printf("\n");
     printf("```");
     printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]);
@@ -79,23 +61,20 @@ int main ()
     printf("```");
     printf("\n");
 
-	// CHECK PLAYER WINNER 
 	 if (check_winner(board, 'X')) {
-		printf("\nYOU WIN!\n");
+		printf("\nYOU WIN!");
 		clear_board();
 		return 1;
 	 }
 	
-	// CHECK BOT WINNER
 	if (check_winner(board, 'O')) {
-		printf("\nYOU LOSE!\n");
+		printf("\nYOU LOSE!");
 		clear_board();
 		return 1;
 	}
 	
-	// CHECK TIE
 	if (is_board_full(board)){
-		printf("\nIt's a tie!\n");
+		printf("\nIt's a tie!");
 		clear_board();
 		return 1;
 	}
@@ -112,14 +91,10 @@ int main ()
 		}
     }
 	
-    oneDArray[9] = '1';
-	
-	// WRITE TO JSON
-    write_var(oneDArray);
+    write_var_new(oneDArray);
 	
     return 0;
 }
-
 
 bool check_winner(char board[3][3], char player) {
     // check rows and columns
@@ -159,17 +134,11 @@ void update_board(int row, int col, char mark, char board[3][3]) {
 }
 
 void clear_board(){
-	char clear[11] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '0', '\0'}; 
-	write_var(clear);
+	char clear[10] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '\0'}; 
+	write_var_new(clear);
 }
 
-void write_var(char array[]){
-	std::string filename = "./output/__internals__.json";
-	std::ofstream file(filename);
-	std::string jsonString = std::string(R"({
-        "storage":  {"server": {}, "user": {"myvar2": ")") + array + R"("}, "channel": {}}
-    })";
-	
-	file << jsonString << std::endl;
-	file.close();
+void write_var_new(const char array[]) {
+    std::ofstream file("./output/__internals__.json");
+    file << R"({"storage":{"server":{},"user":{"myvar2":")" << array << R"("},"channel":{}}})";
 }
