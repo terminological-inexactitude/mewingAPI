@@ -9,7 +9,7 @@ bool is_board_full(char board[3][3]);
 void bot_move(char board[3][3]);
 void update_board(int row, int col, char player, char board[3][3]);
 void clear_board();
-void write_var_new(const char array[])
+void write_var(char array[]);
 
 int main ()
 {
@@ -91,7 +91,7 @@ int main ()
 		}
     }
 	
-    write_var_new(oneDArray);
+    write_var(oneDArray);
 	
     return 0;
 }
@@ -135,10 +135,16 @@ void update_board(int row, int col, char mark, char board[3][3]) {
 
 void clear_board(){
 	char clear[10] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '\0'}; 
-	write_var_new(clear);
+	write_var(clear);
 }
 
-void write_var_new(const char array[]) {
-    std::ofstream file("./output/__internals__.json");
-    file << R"({"storage":{"server":{},"user":{"myvar2":")" << array << R"("},"channel":{}}})";
+void write_var(char array[]){
+	std::string filename = "./output/__internals__.json";
+	std::ofstream file(filename);
+	std::string jsonString = std::string(R"({
+        "storage":  {"server": {}, "user": {"myvar2": ")") + array + R"("}, "channel": {}}
+    })";
+	
+	file << jsonString << std::endl;
+	file.close();
 }
