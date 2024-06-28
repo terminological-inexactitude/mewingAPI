@@ -96,7 +96,6 @@ int main ()
     return 0;
 }
 
-
 bool check_winner(char board[3][3], char player) {
     // check rows and columns
     for (int i = 0; i < 3; ++i) {
