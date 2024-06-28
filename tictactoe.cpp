@@ -9,7 +9,7 @@ bool is_board_full(char board[3][3]);
 void bot_move(char board[3][3]);
 void update_board(int row, int col, char player, char board[3][3]);
 void clear_board();
-void write_var_new(const char array[])
+void write_var_new(const char array[]);
 
 int main ()
 {
