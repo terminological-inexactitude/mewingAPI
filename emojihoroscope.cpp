@@ -10,10 +10,10 @@ int main()
     seconds = time(NULL);
     int daysSinceEpoch = seconds / (60 * 60 * 24);
 
-    unsigned long long randomseed = usertag + daysSinceEpoch;
+    unsigned long long randomseed = usertag + daysSinceEpoch; // ensure user's only get 1 a day
     srand(randomseed);
 
-    int p = rand() % 30 + 1; // Range of 1 to 20 
+    int p = rand() % 30 + 1; // Range of 1 to 30 
 
     const char* s;
 
