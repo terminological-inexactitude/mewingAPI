@@ -19,7 +19,7 @@ int main()
 
     switch (p) {
         case 1:
-            s = "💀";
+            s = "😄";
             break;
         case 2:
             s = "😂";
@@ -61,7 +61,7 @@ int main()
             s = "🍀";
             break;
         case 15:
-            s = "😎";
+            s = "😛";
             break;
         case 16:
             s = "🤮";
