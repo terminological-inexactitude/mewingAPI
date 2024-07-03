@@ -12,11 +12,11 @@ void clear_board();
 void write_var_new(const char array[]);
 
 bool gBoardFull = false;
+char board[3][3];
+char oneDArray[10];
 
 int main ()
 {
-    char board[3][3];
-    char oneDArray[10];
     oneDArray[9] = '\0';
     short row, col;
 	
