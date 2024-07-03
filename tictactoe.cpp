@@ -126,7 +126,7 @@ bool is_board_full(char board[3][3]) {
 }
 
 void bot_move(char board[3][3]){
-	update_board(2, 1, 'O', board);
+	place_mark(2, 1, 'O', board);
 }
 
 void place_mark(int row, int col, char mark, char board[3][3]) {
