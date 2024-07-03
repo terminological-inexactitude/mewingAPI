@@ -7,7 +7,7 @@
 bool check_winner(char board[3][3], char player);
 bool is_board_full(char board[3][3]);
 void bot_move(char board[3][3]);
-void update_board(int row, int col, char player, char board[3][3]);
+void place_mark(int row, int col, char player, char board[3][3]);
 void clear_board();
 void write_var_new(const char array[]);
 
@@ -45,7 +45,7 @@ int main ()
     }
 	
 	// PLAYER MOVE
-	update_board(row, col, 'X', board);
+	place_mark(row, col, 'X', board);
 	
 	// BOT MOVE
 	bot_move(board);
@@ -129,7 +129,7 @@ void bot_move(char board[3][3]){
 	update_board(2, 1, 'O', board);
 }
 
-void update_board(int row, int col, char mark, char board[3][3]) {
+void place_mark(int row, int col, char mark, char board[3][3]) {
     board[row][col] = mark;
 }
 
