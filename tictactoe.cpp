@@ -11,6 +11,8 @@ void place_mark(int row, int col, char player, char board[3][3]);
 void clear_board();
 void write_var_new(const char array[]);
 
+bool gBoardFull = FALSE;
+
 int main ()
 {
     char board[3][3];
