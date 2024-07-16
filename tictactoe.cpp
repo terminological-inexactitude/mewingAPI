@@ -55,15 +55,8 @@ int main ()
 		return 2;
 	}
 	
-	if(boardFull){
-		printf("It's a tie!");	
-		print_board();
-		clear_array();		
-		return 3;
-	}
-	
 	// BOT MOVE
-	int botRow, botCol;
+	int botRow, botCol, count = 0;
 	
 	do{
 		std::random_device rd;
@@ -71,10 +64,11 @@ int main ()
 		std::uniform_int_distribution<> dis(0, 2);
 		botRow = dis(gen);
 		botCol = dis(gen);
+		if(++count >= 10 ) break;
 	}
 	while (gBoard[botRow][botCol] != ' ');
 	
-    gBoard[botRow][botCol] = 'O';
+    if(count < 10) gBoard[botRow][botCol] = 'O';
 	
     // PRINT BOARD
 	print_board();
@@ -103,6 +97,13 @@ int main ()
 			}
 		}
     }
+	
+	if(boardFull){
+		printf("It's a tie!");	
+		print_board();
+		clear_array();		
+		return 3;
+	}
 	
     write_var_new(oneDArray);
 	
