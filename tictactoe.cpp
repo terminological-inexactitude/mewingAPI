@@ -7,7 +7,7 @@
 
 bool check_winner(char board[3][3], char player);
 void bot_move(char board[3][3]);
-void place_mark(int row, int col, char player, char board[3][3]);
+void place_mark(int row, int col, char player);
 void clear_board();
 void write_var_new(const char array[]);
 
@@ -47,7 +47,7 @@ int main ()
     }
 	
 	// PLAYER MOVE
-	place_mark(row, col, 'X', gBoard);
+	place_mark(row, col, 'X');
 	
 	// BOT MOVE
 	bot_move(gBoard);
@@ -117,11 +117,11 @@ bool check_winner(char board[3][3], char player) {
 }
 
 void bot_move(char board[3][3]){
-	place_mark(2, 1, 'O', board);
+	place_mark(2, 1, 'O');
 }
 
-void place_mark(int row, int col, char mark, char board[3][3]) {
-    board[row][col] = mark;
+void place_mark(int row, int col, char mark) {
+    gBoard[row][col] = mark;
 }
 
 void clear_board(){
