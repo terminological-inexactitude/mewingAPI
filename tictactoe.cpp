@@ -55,9 +55,14 @@ int main ()
 		return 2;
 	}
 	
+	if(boardFull){
+		printf("It's a tie!");
+		clear_board; 
+		return 3;
+	}
+	
 	// BOT MOVE
-	int botRow = 0;
-	int botCol = 0;
+	int botRow, botCol;
 	
 	do{
 		std::random_device rd;
@@ -97,11 +102,6 @@ int main ()
 			}
 		}
     }
-	
-	if(boardFull){
-		printf("It's a tie!");
-		clear_board; 
-	}
 	
     write_var_new(oneDArray);
 	
