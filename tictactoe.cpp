@@ -24,7 +24,7 @@ int main ()
         col = input[2] - '1';
     } 
     else if(input == "clear"){	
-		printf("\nBoard cleared!");
+		printf("Board cleared!");
 		clear_array();
         return 1;
     }
