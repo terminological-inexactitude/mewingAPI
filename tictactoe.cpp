@@ -20,8 +20,8 @@ int main ()
 	bool boardFull = true;
 	
     if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
-		row = input[0] - '1';
-        col = input[2] - '1';
+		row = input[0] - 1;
+        col = input[2] - 1;
     } 
     else if(input == "clear"){	
 		printf("\nBoard cleared!");
