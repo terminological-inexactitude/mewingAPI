@@ -101,15 +101,15 @@ int main ()
 bool check_winner(char player) {
     // check rows and columns
     for (int i = 0; i < 3; ++i) {
-        if ((board[i][0] == player && gBoard[i][1] == player && gBoard[i][2] == player) ||
-            (board[0][i] == player && gBoard[1][i] == player && gBoard[2][i] == player)) {
+        if ((gBoard[i][0] == player && gBoard[i][1] == player && gBoard[i][2] == player) ||
+            (gBoard[0][i] == player && gBoard[1][i] == player && gBoard[2][i] == player)) {
             return true;
         }
     }
 
     // check diagonals
-    if ((board[0][0] == player && gBoard[1][1] == player && gBoard[2][2] == player) ||
-        (board[0][2] == player && gBoard[1][1] == player && gBoard[2][0] == player)) {
+    if ((gBoard[0][0] == player && gBoard[1][1] == player && gBoard[2][2] == player) ||
+        (gBoard[0][2] == player && gBoard[1][1] == player && gBoard[2][0] == player)) {
         return true;
     }
 
