@@ -49,16 +49,20 @@ int main ()
 		gBoard[row][col] = 'X';
 	}
 	else{
-		printf("'Place already occupied");
+		printf("Place already occupied by an %C!", gBoard[row][col]);
 		return 2;
 	}
 	
 	// BOT MOVE
-	std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(0, 2);
-    int botRow = dis(gen);
-    int botCol = dis(gen);
+	do{
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_int_distribution<> dis(0, 2);
+		int botRow = dis(gen);
+		int botCol = dis(gen);
+	}
+	while (gBoard[botRow][botCol] != ' ');
+	
     gBoard[botRow][botCol] = 'O';
 	
     // PRINT BOARD
