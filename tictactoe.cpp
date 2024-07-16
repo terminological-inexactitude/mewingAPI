@@ -45,7 +45,13 @@ int main ()
     }
 	
 	// PLAYER MOVE
-	gBoard[row][col] = 'X';
+	if(gBoard[row][col] == ' '){
+		gBoard[row][col] = 'X';
+	}
+	else{
+		printf("'Place already occupied");
+		return 2;
+	}
 	
 	// BOT MOVE
 	std::random_device rd;
@@ -69,13 +75,13 @@ int main ()
 	 if (check_winner('X')) {
 		printf("YOU WIN!");
 		clear_board();
-		return 1;
+		return 3;
 	 }
 	
 	if (check_winner('O')) {
 		printf("YOU LOSE!");
 		clear_board();
-		return 1;
+		return 3;
 	}
 
     // READ BOARD
