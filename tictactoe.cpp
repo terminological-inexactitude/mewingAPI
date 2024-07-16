@@ -5,8 +5,9 @@
 #define input "{args}"
 #define getvar "{getuser:myvar2}"
 
-bool check_winner(char player);
+void print_board();
 void clear_board();
+bool check_winner(char player);
 void write_var_new(const char array[]);
 
 char gBoard[3][3];
@@ -50,6 +51,7 @@ int main ()
 	}
 	else{
 		printf("Place already occupied by an %C!", gBoard[row][col]);
+		print_board();
 		return 2;
 	}
 	
@@ -69,15 +71,7 @@ int main ()
     gBoard[botRow][botCol] = 'O';
 	
     // PRINT BOARD
-    printf("\n");
-    printf("```");
-    printf(" %c | %c | %c\n", gBoard[0][0], gBoard[0][1], gBoard[0][2]);
-    printf("---+---+---\n");
-    printf(" %c | %c | %c\n", gBoard[1][0], gBoard[1][1], gBoard[1][2]);
-    printf("---+---+---\n");
-    printf(" %c | %c | %c\n", gBoard[2][0], gBoard[2][1], gBoard[2][2]);
-    printf("```");
-    printf("\n");
+	print_board();
 
 	 if (check_winner('X')) {
 		printf("YOU WIN!");
@@ -114,6 +108,23 @@ int main ()
     return 0;
 }
 
+void print_board(){
+	printf("\n");
+    printf("```");
+    printf(" %c | %c | %c\n", gBoard[0][0], gBoard[0][1], gBoard[0][2]);
+    printf("---+---+---\n");
+    printf(" %c | %c | %c\n", gBoard[1][0], gBoard[1][1], gBoard[1][2]);
+    printf("---+---+---\n");
+    printf(" %c | %c | %c\n", gBoard[2][0], gBoard[2][1], gBoard[2][2]);
+    printf("```");
+    printf("\n");
+}
+
+void clear_board(){
+	char clear[10] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '\0'}; 
+	write_var_new(clear);
+}
+
 bool check_winner(char player) {
     // check rows and columns
     for (int i = 0; i < 3; ++i) {
@@ -130,11 +141,6 @@ bool check_winner(char player) {
     }
 
     return false;
-}
-
-void clear_board(){
-	char clear[10] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '\0'}; 
-	write_var_new(clear);
 }
 
 void write_var_new(const char array[]) {
