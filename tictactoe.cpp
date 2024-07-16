@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <random>
 
 #define input "{args}"
 #define getvar "{getuser:myvar2}"
@@ -10,7 +11,7 @@ void place_mark(int row, int col, char player, char board[3][3]);
 void clear_board();
 void write_var_new(const char array[]);
 
-char board[3][3];
+char gBoard[3][3];
 char oneDArray[10];
 
 int main ()
@@ -37,39 +38,39 @@ int main ()
     for (int i = 0; i < 3; ++i){
         for (int j = 0; j < 3; ++j){
             if(getvar[i * 3 + j] == 'E'){
-                board[i][j] = ' ';
+                gBoard[i][j] = ' ';
             }
             else{
-                board[i][j] = getvar[i * 3 + j];
+                gBoard[i][j] = getvar[i * 3 + j];
             }
         }
     }
 	
 	// PLAYER MOVE
-	place_mark(row, col, 'X', board);
+	place_mark(row, col, 'X', gBoard);
 	
 	// BOT MOVE
-	bot_move(board);
+	bot_move(gBoard);
 
     // PRINT BOARD
     printf("\n");
     printf("```");
-    printf(" %c | %c | %c\n", board[0][0], board[0][1], board[0][2]);
+    printf(" %c | %c | %c\n", gBoard[0][0], gBoard[0][1], gBoard[0][2]);
     printf("---+---+---\n");
-    printf(" %c | %c | %c\n", board[1][0], board[1][1], board[1][2]);
+    printf(" %c | %c | %c\n", gBoard[1][0], gBoard[1][1], gBoard[1][2]);
     printf("---+---+---\n");
-    printf(" %c | %c | %c\n", board[2][0], board[2][1], board[2][2]);
+    printf(" %c | %c | %c\n", gBoard[2][0], gBoard[2][1], gBoard[2][2]);
     printf("```");
     printf("\n");
 
-	 if (check_winner(board, 'X')) {
-		printf("\nYOU WIN!");
+	 if (check_winner(gBoard, 'X')) {
+		printf("YOU WIN!");
 		clear_board();
 		return 1;
 	 }
 	
-	if (check_winner(board, 'O')) {
-		printf("\nYOU LOSE!");
+	if (check_winner(gBoard, 'O')) {
+		printf("YOU LOSE!");
 		clear_board();
 		return 1;
 	}
@@ -77,18 +78,18 @@ int main ()
     // READ BOARD
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
-			if(board[i][j] == ' '){
+			if(gBoard[i][j] == ' '){
 				boardFull = false;
 				oneDArray[i * 3 + j] = 'E';
 			}
 			else{
-				oneDArray[i * 3 + j] = board[i][j];
+				oneDArray[i * 3 + j] = gBoard[i][j];
 			}
 		}
     }
 	
 	if(boardFull){
-		printf("\nYIt's a tie!");
+		printf("It's a tie!");
 		clear_board; 
 	}
 	
