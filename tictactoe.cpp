@@ -121,7 +121,11 @@ void bot_move(){
 }
 
 void place_mark(int row, int col, char mark) {
-    gBoard[row][col] = mark;
+	if(gBoard[row][col] != ' '){
+		printf("Place already occupied!!"); 
+	}else{
+		gBoard[row][col] = mark;
+	} 
 }
 
 void clear_board(){
