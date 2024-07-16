@@ -6,7 +6,7 @@
 #define getvar "{getuser:myvar2}"
 
 void print_board();
-void clear_board();
+void clear_array();
 bool check_winner(char player);
 void write_var_new(const char array[]);
 
@@ -25,7 +25,7 @@ int main ()
     } 
     else if(input == "clear"){	
 		printf("\nBoard cleared!");
-		clear_board();
+		clear_array();
         return 1;
     }
     else{
@@ -58,7 +58,7 @@ int main ()
 	if(boardFull){
 		printf("It's a tie!");	
 		print_board();
-		clear_board;		
+		clear_array;		
 		return 3;
 	}
 	
@@ -81,13 +81,13 @@ int main ()
 
 	 if (check_winner('X')) {
 		printf("YOU WIN!");
-		clear_board();
+		clear_array();
 		return 3;
 	 }
 	
 	if (check_winner('O')) {
 		printf("YOU LOSE!");
-		clear_board();
+		clear_array();
 		return 3;
 	}
 
@@ -121,7 +121,7 @@ void print_board(){
     printf("\n");
 }
 
-void clear_board(){
+void clear_array(){
 	char clear[10] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '\0'}; 
 	write_var_new(clear);
 }
