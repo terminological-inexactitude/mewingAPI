@@ -6,8 +6,6 @@
 #define getvar "{getuser:myvar2}"
 
 bool check_winner(char player);
-void bot_move();
-void place_mark(int row, int col, char player);
 void clear_board();
 void write_var_new(const char array[]);
 
@@ -47,11 +45,16 @@ int main ()
     }
 	
 	// PLAYER MOVE
-	place_mark(row, col, 'X');
+	gBoard[row][col] = 'X';
 	
 	// BOT MOVE
-	bot_move();
-
+	std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 2);
+    int botRow = dis(gen);
+    int botCol = dis(gen);
+    gBoard[botRow][botCol] = 'O';
+	
     // PRINT BOARD
     printf("\n");
     printf("```");
@@ -114,18 +117,6 @@ bool check_winner(char player) {
     }
 
     return false;
-}
-
-void bot_move(){
-	place_mark(2, 1, 'O');
-}
-
-void place_mark(int row, int col, char mark) {
-	if(gBoard[row][col] != ' '){
-		printf("Place already occupied!!"); 
-	}else{
-		gBoard[row][col] = mark;
-	} 
 }
 
 void clear_board(){
