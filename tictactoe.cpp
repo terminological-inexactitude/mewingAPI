@@ -54,6 +54,9 @@ int main ()
 	}
 	
 	// BOT MOVE
+	int botRow;
+	int botCol;
+	
 	do{
 		std::random_device rd;
 		std::mt19937 gen(rd());
