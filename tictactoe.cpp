@@ -50,7 +50,7 @@ int main ()
 		gBoard[row][col] = 'X';
 	}
 	else{
-		printf("Place already occupied by an %C!", gBoard[row][col]);
+		printf("Place already occupied by a %C!", gBoard[row][col]);
 		print_board();
 		return 2;
 	}
