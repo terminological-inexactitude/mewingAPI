@@ -5,13 +5,11 @@
 #define getvar "{getuser:myvar2}"
 
 bool check_winner(char board[3][3], char player);
-bool is_board_full(char board[3][3]);
 void bot_move(char board[3][3]);
 void place_mark(int row, int col, char player, char board[3][3]);
 void clear_board();
 void write_var_new(const char array[]);
 
-bool gBoardFull = false;
 char board[3][3];
 char oneDArray[10];
 
@@ -19,6 +17,7 @@ int main ()
 {
     oneDArray[9] = '\0';
     short row, col;
+	bool boardFull = true;
 	
     if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
 		row = input[0] - '1';
@@ -74,17 +73,12 @@ int main ()
 		clear_board();
 		return 1;
 	}
-	
-	if (is_board_full(board)){
-		printf("\nIt's a tie!");
-		clear_board();
-		return 1;
-	}
 
     // READ BOARD
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
 			if(board[i][j] == ' '){
+				boardFull = false;
 				oneDArray[i * 3 + j] = 'E';
 			}
 			else{
@@ -92,6 +86,11 @@ int main ()
 			}
 		}
     }
+	
+	if(boardFull){
+		printf("\nYIt's a tie!");
+		clear_board; 
+	}
 	
     write_var_new(oneDArray);
 	
@@ -114,17 +113,6 @@ bool check_winner(char board[3][3], char player) {
     }
 
     return false;
-}
-
-bool is_board_full(char board[3][3]) {
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
-            if (board[i][j] == ' ' || board[i][j] == 'E') {
-                return false; // found an empty space
-            }
-        }
-    }
-    return true;
 }
 
 void bot_move(char board[3][3]){
