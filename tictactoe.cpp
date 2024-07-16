@@ -56,9 +56,9 @@ int main ()
 	}
 	
 	if(boardFull){
-		printf("It's a tie!");
-		clear_board;
-		print_board();		
+		printf("It's a tie!");	
+		print_board();
+		clear_board;		
 		return 3;
 	}
 	
