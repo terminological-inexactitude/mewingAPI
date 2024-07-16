@@ -5,8 +5,8 @@
 #define input "{args}"
 #define getvar "{getuser:myvar2}"
 
-bool check_winner(char board[3][3], char player);
-void bot_move(char board[3][3]);
+bool check_winner(char player);
+void bot_move();
 void place_mark(int row, int col, char player);
 void clear_board();
 void write_var_new(const char array[]);
@@ -50,7 +50,7 @@ int main ()
 	place_mark(row, col, 'X');
 	
 	// BOT MOVE
-	bot_move(gBoard);
+	bot_move();
 
     // PRINT BOARD
     printf("\n");
@@ -63,13 +63,13 @@ int main ()
     printf("```");
     printf("\n");
 
-	 if (check_winner(gBoard, 'X')) {
+	 if (check_winner('X')) {
 		printf("YOU WIN!");
 		clear_board();
 		return 1;
 	 }
 	
-	if (check_winner(gBoard, 'O')) {
+	if (check_winner('O')) {
 		printf("YOU LOSE!");
 		clear_board();
 		return 1;
@@ -98,25 +98,25 @@ int main ()
     return 0;
 }
 
-bool check_winner(char board[3][3], char player) {
+bool check_winner(char player) {
     // check rows and columns
     for (int i = 0; i < 3; ++i) {
-        if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) ||
-            (board[0][i] == player && board[1][i] == player && board[2][i] == player)) {
+        if ((board[i][0] == player && gBoard[i][1] == player && gBoard[i][2] == player) ||
+            (board[0][i] == player && gBoard[1][i] == player && gBoard[2][i] == player)) {
             return true;
         }
     }
 
     // check diagonals
-    if ((board[0][0] == player && board[1][1] == player && board[2][2] == player) ||
-        (board[0][2] == player && board[1][1] == player && board[2][0] == player)) {
+    if ((board[0][0] == player && gBoard[1][1] == player && gBoard[2][2] == player) ||
+        (board[0][2] == player && gBoard[1][1] == player && gBoard[2][0] == player)) {
         return true;
     }
 
     return false;
 }
 
-void bot_move(char board[3][3]){
+void bot_move(){
 	place_mark(2, 1, 'O');
 }
 
