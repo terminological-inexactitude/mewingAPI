@@ -64,18 +64,21 @@ int main ()
 	
 	// BOT MOVE
 	int botRow, botCol, count = 0;
-
-	do{
-		std::random_device rd;
-		std::mt19937 gen(rd());
-		std::uniform_int_distribution<> dis(0, 2);
-		botRow = dis(gen);
-		botCol = dis(gen);
-		if(++count >= 10 ) break;
+	if(gBoard[2][2] == ' '){
+		gBoard[2][2] = 'O';
 	}
-	while (gBoard[botRow][botCol] != ' ');
-
-    if(count < 10) gBoard[botRow][botCol] = 'O';
+	else{	
+		do{
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<> dis(0, 2);
+			botRow = dis(gen);
+			botCol = dis(gen);
+			if(++count >= 10 ) break;
+		}
+		while (gBoard[botRow][botCol] != ' ');
+		if(count < 10) gBoard[botRow][botCol] = 'O';
+	}
 	
     // PRINT BOARD
 	print_board();
