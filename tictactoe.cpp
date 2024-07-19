@@ -101,9 +101,8 @@ int main ()
 
 void botMove(){
 	int r, c, count = 0;
-	if(gBoard[2][2] == ' ')
-		gBoard[2][2] = 'O'; 
-	    return;
+	if(gBoard[2][2] == ' '){
+		gBoard[2][2] = 'O'; return;
 	}
 	
 	do{
