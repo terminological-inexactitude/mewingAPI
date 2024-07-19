@@ -56,6 +56,7 @@ int main ()
 	}
 	
 	if (check_winner('X')) {
+		print_board();
 		printf("YOU WIN!");
 		clear_array();
 		return 3;
@@ -79,15 +80,15 @@ int main ()
     // PRINT BOARD
 	print_board();
 	
-	if (check_winner('O')) {
+	if (check_winner('O')){
 		printf("YOU LOSE!");
 		clear_array();
 		return 3;
 	}
 
     // READ BOARD
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
+    for (int i = 0; i < 3; ++i){
+        for (int j = 0; j < 3; ++j){
 			if(gBoard[i][j] == ' '){
 				boardFull = false;
 				oneDArray[i * 3 + j] = 'E';
@@ -127,7 +128,7 @@ void clear_array(){
 	write_var_new(clear);
 }
 
-bool check_winner(char player) {
+bool check_winner(char player){
     // check rows and columns
     for (int i = 0; i < 3; ++i) {
         if ((gBoard[i][0] == player && gBoard[i][1] == player && gBoard[i][2] == player) ||
@@ -145,7 +146,7 @@ bool check_winner(char player) {
     return false;
 }
 
-void write_var_new(const char array[]) {
+void write_var_new(const char array[]){
     std::ofstream file("./output/__internals__.json");
     file << R"({"storage":{"server":{},"user":{"myvar2":")" << array << R"("},"channel":{}}})";
 }
