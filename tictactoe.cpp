@@ -77,7 +77,6 @@ int main ()
 	while (gBoard[botRow][botCol] != ' ');
 
     if(count < 10) gBoard[botRow][botCol] = 'O';
-    gBoard[botRow][botCol] = 'O';
 	
     // PRINT BOARD
 	print_board();
