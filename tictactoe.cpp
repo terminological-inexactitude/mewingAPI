@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <stdlib>
+#include <cstdlib>
 
 #define input "{args}"
 #define getvar "{getuser:myvar2}"
