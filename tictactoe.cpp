@@ -51,7 +51,7 @@ int main ()
 		gBoard[row][col] = 'X';
 	}
 	else{
-		printf("That spot is already occupied by a %C!%n", gBoard[row][col]);
+		printf("That spot is already occupied by a %C!", gBoard[row][col]);
 		printBoard();
 		return 2;
 	}
