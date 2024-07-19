@@ -55,6 +55,12 @@ int main ()
 		return 2;
 	}
 	
+	if (check_winner('X')) {
+		printf("YOU WIN!");
+		clear_array();
+		return 3;
+	}
+	
 	// BOT MOVE
 	int botRow, botCol, count = 0;
 	
@@ -73,11 +79,7 @@ int main ()
     // PRINT BOARD
 	print_board();
 
-	 if (check_winner('X')) {
-		printf("YOU WIN!");
-		clear_array();
-		return 3;
-	 }
+
 	
 	if (check_winner('O')) {
 		printf("YOU LOSE!");
