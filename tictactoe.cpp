@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <random>
+#include <stdlib>
 
 #define input "{args}"
 #define getvar "{getuser:myvar2}"
