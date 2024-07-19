@@ -64,7 +64,6 @@ int main ()
 	
 	// BOT MOVE
 	int botRow, botCol, count = 0;
-	int botRow, botCol;
 
 	do{
 		std::random_device rd;
