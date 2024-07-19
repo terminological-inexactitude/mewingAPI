@@ -78,8 +78,6 @@ int main ()
 	
     // PRINT BOARD
 	print_board();
-
-
 	
 	if (check_winner('O')) {
 		printf("YOU LOSE!");
