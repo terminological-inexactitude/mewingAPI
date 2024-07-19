@@ -26,7 +26,7 @@ int main ()
     } 
     else if(input == "clear"){	
 		printf("Board cleared!");
-		clear_array();
+		clearArray();
         return 1;
     }
     else{
@@ -52,14 +52,14 @@ int main ()
 	}
 	else{
 		printf("That spot is already occupied by a %C!%n", gBoard[row][col]);
-		print_board();
+		printBoard();
 		return 2;
 	}
 	
 	if (check_winner('X')) {
-		print_board();
+		printBoard();
 		printf("YOU WIN!");
-		clear_array();
+		clearArray();
 		return 3;
 	}
 	
@@ -71,7 +71,7 @@ int main ()
 	
 	if (check_winner('O')){
 		printf("YOU LOSE!");
-		clear_array();
+		clearArray();
 		return 3;
 	}
 
@@ -89,13 +89,12 @@ int main ()
     }
 	
 	if(boardFull){
-		printf("It's a tie!");	
-		print_board();
-		clear_array();		
+		printf("It's a tie!");
+		clearArray();		
 		return 3;
 	}
 	
-    write_var_new(oneDArray);
+    writeVar(oneDArray);
 	
     return 0;
 }
@@ -133,7 +132,7 @@ void printBoard(){
 
 void clearArray(){
 	char clear[10] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '\0'}; 
-	write_var_new(clear);
+	write_var(clear);
 }
 
 bool checkWinner(char player){
