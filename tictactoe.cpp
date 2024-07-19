@@ -56,7 +56,7 @@ int main ()
 		return 2;
 	}
 	
-	if (check_winner('X')) {
+	if (checkWinner('X')) {
 		printBoard();
 		printf("YOU WIN!");
 		clearArray();
@@ -67,9 +67,9 @@ int main ()
 	botMove();
 	
     // PRINT BOARD
-	print_board();
+	printBoard();
 	
-	if (check_winner('O')){
+	if (checkWinner('O')){
 		printf("YOU LOSE!");
 		clearArray();
 		return 3;
@@ -100,21 +100,18 @@ int main ()
 }
 
 void botMove(){
-		int botRow, botCol, count = 0;
+	int r, c, count = 0;
 	if(gBoard[2][2] == ' '){
 		gBoard[2][2] = 'O';
 	}
 	else{	
 		do{
-			std::random_device rd;
-			std::mt19937 gen(rd());
-			std::uniform_int_distribution<> dis(0, 2);
-			botRow = dis(gen);
-			botCol = dis(gen);
+			r = rand() % 3;
+			c = rand() % 3;
 			if(++count >= 10 ) break;
 		}
-		while (gBoard[botRow][botCol] != ' ');
-		if(count < 10) gBoard[botRow][botCol] = 'O';
+		while (gBoard[r][c] != ' ');
+		if(count < 10) gBoard[r][c] = 'O';
 	}
 }
 
@@ -132,7 +129,7 @@ void printBoard(){
 
 void clearArray(){
 	char clear[10] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '\0'}; 
-	write_var(clear);
+	writeVar(clear);
 }
 
 bool checkWinner(char player){
