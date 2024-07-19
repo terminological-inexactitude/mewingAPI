@@ -102,10 +102,12 @@ int main ()
 void botMove(){
 	int r, c, count = 0;
 	if(gBoard[2][2] == ' '){
+		printf("asf");
 		gBoard[2][2] = 'O'; return;
 	}
 	
 	do{
+		printf("jkl");
 		r = rand() % 3;
 		c = rand() % 3;
 		if(++count >= 10 ) break;
