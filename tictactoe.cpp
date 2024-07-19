@@ -5,10 +5,11 @@
 #define input "{args}"
 #define getvar "{getuser:myvar2}"
 
-void print_board();
-void clear_array();
-bool check_winner(char player);
-void write_var_new(const char array[]);
+void botMove();
+void printBoard();
+void clearArray();
+bool checkWinner(char player);
+void writeVar(const char array[]);
 
 char gBoard[3][3];
 char oneDArray[10];
@@ -63,22 +64,7 @@ int main ()
 	}
 	
 	// BOT MOVE
-	int botRow, botCol, count = 0;
-	if(gBoard[2][2] == ' '){
-		gBoard[2][2] = 'O';
-	}
-	else{	
-		do{
-			std::random_device rd;
-			std::mt19937 gen(rd());
-			std::uniform_int_distribution<> dis(0, 2);
-			botRow = dis(gen);
-			botCol = dis(gen);
-			if(++count >= 10 ) break;
-		}
-		while (gBoard[botRow][botCol] != ' ');
-		if(count < 10) gBoard[botRow][botCol] = 'O';
-	}
+	botMove();
 	
     // PRINT BOARD
 	print_board();
@@ -114,7 +100,26 @@ int main ()
     return 0;
 }
 
-void print_board(){
+void botMove(){
+		int botRow, botCol, count = 0;
+	if(gBoard[2][2] == ' '){
+		gBoard[2][2] = 'O';
+	}
+	else{	
+		do{
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<> dis(0, 2);
+			botRow = dis(gen);
+			botCol = dis(gen);
+			if(++count >= 10 ) break;
+		}
+		while (gBoard[botRow][botCol] != ' ');
+		if(count < 10) gBoard[botRow][botCol] = 'O';
+	}
+}
+
+void printBoard(){
 	printf("\n");
     printf("```");
     printf(" %c | %c | %c\n", gBoard[0][0], gBoard[0][1], gBoard[0][2]);
@@ -126,12 +131,12 @@ void print_board(){
     printf("\n");
 }
 
-void clear_array(){
+void clearArray(){
 	char clear[10] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '\0'}; 
 	write_var_new(clear);
 }
 
-bool check_winner(char player){
+bool checkWinner(char player){
     // check rows and columns
     for (int i = 0; i < 3; ++i) {
         if ((gBoard[i][0] == player && gBoard[i][1] == player && gBoard[i][2] == player) ||
@@ -149,7 +154,7 @@ bool check_winner(char player){
     return false;
 }
 
-void write_var_new(const char array[]){
+void writeVar(const char array[]){
     std::ofstream file("./output/__internals__.json");
     file << R"({"storage":{"server":{},"user":{"myvar2":")" << array << R"("},"channel":{}}})";
 }
