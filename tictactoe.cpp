@@ -51,7 +51,7 @@ int main ()
 		gBoard[row][col] = 'X';
 	}
 	else{
-		printf("That spot is already occupied by a %C!", gBoard[row][col]);
+		printf("That spot is already occupied by a %C!\n", gBoard[row][col]);
 		printBoard();
 		return 2;
 	}
@@ -101,18 +101,17 @@ int main ()
 
 void botMove(){
 	int r, c, count = 0;
-	if(gBoard[2][2] == ' '){
-		gBoard[2][2] = 'O';
+	if(gBoard[2][2] == ' ')
+		gBoard[2][2] = 'O'; return;
 	}
-	else{	
-		do{
-			r = rand() % 3;
-			c = rand() % 3;
-			if(++count >= 10 ) break;
-		}
-		while (gBoard[r][c] != ' ');
-		if(count < 10) gBoard[r][c] = 'O';
+	
+	do{
+		r = rand() % 3;
+		c = rand() % 3;
+		if(++count >= 10 ) break;
 	}
+	while (gBoard[r][c] != ' ');
+	if(count < 10) gBoard[r][c] = 'O';
 }
 
 void printBoard(){
