@@ -13,8 +13,7 @@ void writeVar(const char array[]);
 
 char gBoard[3][3], oneDArray[10];
 
-int main ()
-{
+int main (){
     oneDArray[9] = '\0';
     short row, col;
 	bool boardFull = true;
@@ -22,13 +21,11 @@ int main ()
     if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
 		row = input[0] - '1';
         col = input[2] - '1';
-    } 
-    else if(input == "clear"){	
+    } else if (input == "clear"){	
 		printf("Board cleared!");
 		clearArray();
         return 1;
-    }
-    else{
+    } else {
         printf("Invalid input format! Use 'row' 'column'");
         return 1;
     }
@@ -40,8 +37,7 @@ int main ()
 	// PLAYER MOVE
 	if(gBoard[row][col] == ' '){
 		gBoard[row][col] = 'X';
-	}
-	else{
+	} else {
 		printf("That spot is already occupied by a %C!\n", gBoard[row][col]);
 		printBoard();
 		return 2;
@@ -99,7 +95,7 @@ void botMove(){
 		if(++count >= 15 ) break;
 	}
 	while (gBoard[r][c] != ' ');
-	if(count < 15) gBoard[r][c] = 'O';
+	if (count < 15) gBoard[r][c] = 'O';
 }
 
 void printBoard() {
