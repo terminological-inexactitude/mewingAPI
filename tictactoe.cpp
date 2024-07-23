@@ -60,32 +60,20 @@ void botMove() {
             }
         }
 
-        // Check diagonals for winning/blocking moves
-        int diag[2][3][2] = {{{0, 0}, {1, 1}, {2, 2}}, {{0, 2}, {1, 1}, {2, 0}}};
-        for (int d = 0; d < 2; ++d) {
-            for (int i = 0; i < 3; ++i) {
-                int r = diag[d][i][0];
-                int c = diag[d][i][1];
-                if (gBoard[r][c] == ' ' && gBoard[diag[d][(i+1)%3][0]][diag[d][(i+1)%3][1]] == m && gBoard[diag[d][(i+2)%3][0]][diag[d][(i+2)%3][1]] == m) {
-                    gBoard[r][c] = 'O';
-                    return;
-                }
-            }
+        // Check corners for diagonal winning/blocking moves
+        if (gBoard[0][0] == ' ' && gBoard[1][1] == m && gBoard[2][2] == m) {
+            gBoard[0][0] = 'O'; return;
+        }
+        if (gBoard[2][2] == ' ' && gBoard[1][1] == m && gBoard[0][0] == m) {
+            gBoard[2][2] = 'O'; return;
+        }
+        if (gBoard[0][2] == ' ' && gBoard[1][1] == m && gBoard[2][0] == m) {
+            gBoard[0][2] = 'O'; return;
+        }
+        if (gBoard[2][0] == ' ' && gBoard[1][1] == m && gBoard[0][2] == m) {
+            gBoard[2][0] = 'O'; return;
         }
     }
-
-    // Take center if available
-    if (gBoard[1][1] == ' ') { gBoard[1][1] = 'O'; return; }
-    
-    // Choose random available spot
-    int r, c, count = 0;
-    do {
-        r = rand() % 3;
-        c = rand() % 3;
-        if (++count >= 15) break;
-    } while (gBoard[r][c] != ' ');
-    if (count < 15) gBoard[r][c] = 'O';
-}
 
     // Take center if available
     if (gBoard[1][1] == ' ') { gBoard[1][1] = 'O'; return; }
