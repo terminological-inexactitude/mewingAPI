@@ -9,6 +9,42 @@ char gBoard[3][3], oneDArray[10];
 
 void clearArray() { writeVar("EEEEEEEEE"); }
 
+void writeVar(const char array[]){
+    std::ofstream file("./output/__internals__.json");
+    file << R"({"storage":{"server":{},"user":{"myvar2":")" << array << R"("},"channel":{}}})";
+}
+
+void printBoard() {
+    std::cout << "\n```\n";
+    for (int i = 0; i < 3; ++i) {
+        if (i > 0) std::cout << "---+---+---\n";
+        for (int j = 0; j < 3; ++j) {
+            if (j > 0) std::cout << " |";
+            std::cout << " " << gBoard[i][j];
+        }
+        std::cout << "\n";
+    }
+    std::cout << "```\n";
+}
+
+bool checkWinner(char player){
+    // check rows and columns
+    for (int i = 0; i < 3; ++i) {
+        if ((gBoard[i][0] == player && gBoard[i][1] == player && gBoard[i][2] == player) ||
+            (gBoard[0][i] == player && gBoard[1][i] == player && gBoard[2][i] == player)) {
+            return true;
+        }
+    }
+
+    // check diagonals
+    if ((gBoard[0][0] == player && gBoard[1][1] == player && gBoard[2][2] == player) ||
+        (gBoard[0][2] == player && gBoard[1][1] == player && gBoard[2][0] == player)) {
+        return true;
+    }
+
+    return false;
+}
+
 void botMove(){	
 	 // Check for a winning or blocking move
      for (int mark = 0; mark < 2; ++mark) {
@@ -52,42 +88,6 @@ void botMove(){
 	}
 	while (gBoard[r][c] != ' ');
 	if (count < 15) gBoard[r][c] = 'O';
-}
-
-void printBoard() {
-    std::cout << "\n```\n";
-    for (int i = 0; i < 3; ++i) {
-        if (i > 0) std::cout << "---+---+---\n";
-        for (int j = 0; j < 3; ++j) {
-            if (j > 0) std::cout << " |";
-            std::cout << " " << gBoard[i][j];
-        }
-        std::cout << "\n";
-    }
-    std::cout << "```\n";
-}
-
-bool checkWinner(char player){
-    // check rows and columns
-    for (int i = 0; i < 3; ++i) {
-        if ((gBoard[i][0] == player && gBoard[i][1] == player && gBoard[i][2] == player) ||
-            (gBoard[0][i] == player && gBoard[1][i] == player && gBoard[2][i] == player)) {
-            return true;
-        }
-    }
-
-    // check diagonals
-    if ((gBoard[0][0] == player && gBoard[1][1] == player && gBoard[2][2] == player) ||
-        (gBoard[0][2] == player && gBoard[1][1] == player && gBoard[2][0] == player)) {
-        return true;
-    }
-
-    return false;
-}
-
-void writeVar(const char array[]){
-    std::ofstream file("./output/__internals__.json");
-    file << R"({"storage":{"server":{},"user":{"myvar2":")" << array << R"("},"channel":{}}})";
 }
 
 int main () {
