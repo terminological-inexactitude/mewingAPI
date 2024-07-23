@@ -15,16 +15,20 @@ void writeVar(const char array[]);
 
 int main (){
     oneDArray[9] = '\0';
-    short row = input[0] - '1', col = input[2] - '1';
+    short row, col;
 	bool boardFull = true;
 	
-    if ((input[0] < '1' && input[0] > '3' && input[2] < '1' && input[2] > '3') || input != "clear") {
-        std::cout << "Invalid input format! Use 'row' 'column'";
+    if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
+		row = input[0] - '1';
+        col = input[2] - '1';
+    } 
+    else if(input == "clear"){	
+		printf("Board cleared!");
+		clearArray();
         return 1;
     }
-    if (input == "clear") {
-        std::cout << "Board cleared!";
-        clearArray();
+    else{
+        printf("Invalid input format! Use 'row' 'column'");
         return 1;
     }
 
