@@ -49,10 +49,7 @@ int main () {
 		return 3;
 	}
 	
-	// BOT MOVE
 	botMove();
-	
-    // PRINT BOARD
 	printBoard();
 	
 	if (checkWinner('O')){
