@@ -5,28 +5,26 @@
 #define input "{args}"
 #define getvar "{getuser:myvar2}"
 
+char gBoard[3][3], oneDArray[10];
+
 void botMove();
 void printBoard();
 void clearArray();
 bool checkWinner(char player);
 void writeVar(const char array[]);
 
-char gBoard[3][3], oneDArray[10];
-
 int main (){
     oneDArray[9] = '\0';
-    short row, col;
+    short row = input[0] - '1', col = input[2] - '1';
 	bool boardFull = true;
 	
-    if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
-		row = input[0] - '1';
-        col = input[2] - '1';
-    } else if (input == "clear"){	
-		printf("Board cleared!");
-		clearArray();
+    if ((input[0] < '1' && input[0] > '3' && input[2] < '1' && input[2] > '3') || input != "clear") {
+        std::cout << "Invalid input format! Use 'row' 'column'";
         return 1;
-    } else {
-        printf("Invalid input format! Use 'row' 'column'");
+    }
+    if (input == "clear") {
+        std::cout << "Board cleared!";
+        clearArray();
         return 1;
     }
 
