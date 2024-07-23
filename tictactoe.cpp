@@ -115,15 +115,13 @@ void botMove(){
 }
 
 void printBoard(){
-	printf("\n");
-    printf("```");
+    printf("\n```");
     printf(" %c | %c | %c\n", gBoard[0][0], gBoard[0][1], gBoard[0][2]);
     printf("---+---+---\n");
     printf(" %c | %c | %c\n", gBoard[1][0], gBoard[1][1], gBoard[1][2]);
     printf("---+---+---\n");
     printf(" %c | %c | %c\n", gBoard[2][0], gBoard[2][1], gBoard[2][2]);
-    printf("```");
-    printf("\n");
+    printf("```\n");
 }
 
 void clearArray(){
