@@ -68,16 +68,13 @@ int main ()
 	}
 
     // READ BOARD
-    for (int i = 0; i < 3; ++i){
-        for (int j = 0; j < 3; ++j){
-			if(gBoard[i][j] == ' '){
-				boardFull = false;
-				oneDArray[i * 3 + j] = 'E';
-			}
-			else{
-				oneDArray[i * 3 + j] = gBoard[i][j];
-			}
-		}
+    for (int i = 0; i < 9; ++i) {
+        if (gBoard[i / 3][i % 3] == ' ') {
+            boardFull = false;
+            oneDArray[i] = 'E';
+        } else {
+            oneDArray[i] = gBoard[i / 3][i % 3];
+        }
     }
 	
 	if(boardFull){
