@@ -7,6 +7,8 @@
 
 char gBoard[3][3], oneDArray[10];
 
+void clearArray() { writeVar("EEEEEEEEE"); }
+
 void botMove(){	
 	 // Check for a winning or blocking move
      for (int mark = 0; mark < 2; ++mark) {
