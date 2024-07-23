@@ -35,16 +35,8 @@ int main ()
     }
 
     // READ ARRAY 
-    for (int i = 0; i < 3; ++i){
-        for (int j = 0; j < 3; ++j){
-            if(getvar[i * 3 + j] == 'E'){
-                gBoard[i][j] = ' ';
-            }
-            else{
-                gBoard[i][j] = getvar[i * 3 + j];
-            }
-        }
-    }
+    for (int i = 0; i < 9; ++i)
+        gBoard[i / 3][i % 3] = getvar[i] == 'E' ? ' ' : getvar[i];
 	
 	// PLAYER MOVE
 	if(gBoard[row][col] == ' '){
