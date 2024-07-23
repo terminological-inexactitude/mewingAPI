@@ -11,8 +11,7 @@ void clearArray();
 bool checkWinner(char player);
 void writeVar(const char array[]);
 
-char gBoard[3][3];
-char oneDArray[10];
+char gBoard[3][3], oneDArray[10];
 
 int main ()
 {
@@ -97,10 +96,10 @@ void botMove(){
 	do{
 		r = rand() % 3;
 		c = rand() % 3;
-		if(++count >= 10 ) break;
+		if(++count >= 15 ) break;
 	}
 	while (gBoard[r][c] != ' ');
-	if(count < 10) gBoard[r][c] = 'O';
+	if(count < 15) gBoard[r][c] = 'O';
 }
 
 void printBoard() {
