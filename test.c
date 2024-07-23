@@ -75,7 +75,7 @@ int main () {
 	
 	if(boardFull){
 		printf("It's a tie!");
-		clearArray();		
+		clearArray();
 		return 3;
 	}
 	
@@ -84,11 +84,41 @@ int main () {
     return 0;
 }
 
-void botMove(){
-	int r, c, count = 0;
+void botMove(){	
+	 // Check for a winning or blocking move
+     for (int mark = 0; mark < 2; ++mark) {
+        char m = mark == 0 ? 'O' : 'X'; // BOT = 'O', PLAYER = 'X'
+        for (int i = 0; i < 3; ++i) {
+            // Check rows and columns
+            for (int j = 0; j < 3; ++j) {
+                if (gBoard[i][j] == ' ' && (
+                        (gBoard[i][(j+1)%3] == m && gBoard[i][(j+2)%3] == m) || 
+                        (gBoard[(i+1)%3][j] == m && gBoard[(i+2)%3][j] == m))) {
+                    gBoard[i][j] = 'O'; return;
+                }
+            }
+        }
+        // Check diagonals
+        if (gBoard[1][1] == ' ' && (
+                (gBoard[0][0] == m && gBoard[2][2] == m) || 
+                (gBoard[0][2] == m && gBoard[2][0] == m))) {
+            gBoard[1][1] = 'O'; return;
+        }
+        for (int d = 0; d < 2; ++d) {
+            if (gBoard[d*2][0] == ' ' && gBoard[1][1] == m && gBoard[(d+1)*2%3][2] == m) {
+                gBoard[d*2][0] = 'O'; return;
+            }
+            if (gBoard[d*2][2] == ' ' && gBoard[1][1] == m && gBoard[(d+1)*2%3][0] == m) {
+                gBoard[d*2][2] = 'O'; return;
+            }
+        }
+    }
+	
 	if(gBoard[1][1] == ' '){
 		gBoard[1][1] = 'O'; return;
 	}
+	
+	int r, c, count = 0;
 	
 	do{
 		r = rand() % 3;
