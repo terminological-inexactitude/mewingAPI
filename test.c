@@ -13,7 +13,7 @@ void clearArray();
 bool checkWinner(char player);
 void writeVar(const char array[]);
 
-int main (){
+int main () {
     oneDArray[9] = '\0';
     short row, col;
 	bool boardFull = true;
@@ -37,13 +37,12 @@ int main (){
         gBoard[i / 3][i % 3] = getvar[i] == 'E' ? ' ' : getvar[i];
 	
 	// PLAYER MOVE
-	if(gBoard[row][col] == ' '){
-		gBoard[row][col] = 'X';
-	} else {
+	if(gBoard[row][col] != ' '){
 		printf("That spot is already occupied by a %C!\n", gBoard[row][col]);
 		printBoard();
 		return 2;
 	}
+	gBoard[row][col] = 'X';
 	
 	if (checkWinner('X')) {
 		printBoard();
