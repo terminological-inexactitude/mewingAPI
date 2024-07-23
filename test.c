@@ -7,9 +7,7 @@
 
 char gBoard[3][3], oneDArray[10];
 
-void botMove();
-void printBoard();
-void clearArray() { writeVar("EEEEEEEEE"); }
+void botMove(), printBoard(), clearArray() { writeVar("EEEEEEEEE"); }
 bool checkWinner(char player);
 void writeVar(const char array[]);
 
