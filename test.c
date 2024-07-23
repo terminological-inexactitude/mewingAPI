@@ -128,8 +128,7 @@ void printBoard() {
 }
 
 void clearArray(){
-	char clear[10] = {'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', '\0'}; 
-	writeVar(clear);
+	writeVar("EEEEEEEEE");
 }
 
 bool checkWinner(char player){
