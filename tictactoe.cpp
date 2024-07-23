@@ -68,7 +68,7 @@ void botMove() {
         }
     }
     if (gBoard[1][1] == ' ') { gBoard[1][1] = 'O'; return; }
-    
+    printf("bot making random move");
     int r, c, count = 0;
     do {
         r = rand() % 3;
