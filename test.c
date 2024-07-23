@@ -9,7 +9,7 @@ char gBoard[3][3], oneDArray[10];
 
 void botMove();
 void printBoard();
-void clearArray();
+void clearArray() { writeVar("EEEEEEEEE"); }
 bool checkWinner(char player);
 void writeVar(const char array[]);
 
@@ -110,10 +110,6 @@ void printBoard() {
         std::cout << "\n";
     }
     std::cout << "```\n";
-}
-
-void clearArray(){
-	writeVar("EEEEEEEEE");
 }
 
 bool checkWinner(char player){
