@@ -7,77 +7,6 @@
 
 char gBoard[3][3], oneDArray[10];
 
-void botMove(), printBoard(), clearArray() { writeVar("EEEEEEEEE"); }
-bool checkWinner(char player);
-void writeVar(const char array[]);
-
-int main () {
-    oneDArray[9] = '\0';
-    short row, col;
-	bool boardFull = true;
-	
-    if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
-		row = input[0] - '1';
-        col = input[2] - '1';
-    } 
-    else if(input == "clear"){	
-		printf("Board cleared!");
-		clearArray();
-        return 1;
-    }
-    else{
-        printf("Invalid input format! Use 'row' 'column'");
-        return 1;
-    }
-
-    // READ ARRAY 
-    for (int i = 0; i < 9; ++i)
-        gBoard[i / 3][i % 3] = getvar[i] == 'E' ? ' ' : getvar[i];
-	
-	// PLAYER MOVE
-	if(gBoard[row][col] != ' '){
-		printf("That spot is already occupied by a %C!\n", gBoard[row][col]);
-		printBoard();
-		return 2;
-	}
-	gBoard[row][col] = 'X';
-	
-	if (checkWinner('X')) {
-		printBoard();
-		printf("YOU WIN!");
-		clearArray();
-		return 3;
-	}
-	
-	botMove();
-	printBoard();
-	
-	if (checkWinner('O')){
-		printf("YOU LOSE!");
-		clearArray();
-		return 3;
-	}
-
-    for (int i = 0; i < 9; ++i) {
-        if (gBoard[i / 3][i % 3] == ' ') {
-            boardFull = false;
-            oneDArray[i] = 'E';
-        } else {
-            oneDArray[i] = gBoard[i / 3][i % 3];
-        }
-    }
-	
-	if(boardFull){
-		printf("It's a tie!");
-		clearArray();
-		return 3;
-	}
-	
-    writeVar(oneDArray);
-	
-    return 0;
-}
-
 void botMove(){	
 	 // Check for a winning or blocking move
      for (int mark = 0; mark < 2; ++mark) {
@@ -157,4 +86,71 @@ bool checkWinner(char player){
 void writeVar(const char array[]){
     std::ofstream file("./output/__internals__.json");
     file << R"({"storage":{"server":{},"user":{"myvar2":")" << array << R"("},"channel":{}}})";
+}
+
+int main () {
+    oneDArray[9] = '\0';
+    short row, col;
+	bool boardFull = true;
+	
+    if (input[0] >= '1' && input[0] <= '3' && input[2] >= '1' && input[2] <= '3'){
+		row = input[0] - '1';
+        col = input[2] - '1';
+    } 
+    else if(input == "clear"){	
+		printf("Board cleared!");
+		clearArray();
+        return 1;
+    }
+    else{
+        printf("Invalid input format! Use 'row' 'column'");
+        return 1;
+    }
+
+    // READ ARRAY 
+    for (int i = 0; i < 9; ++i)
+        gBoard[i / 3][i % 3] = getvar[i] == 'E' ? ' ' : getvar[i];
+	
+	// PLAYER MOVE
+	if(gBoard[row][col] != ' '){
+		printf("That spot is already occupied by a %C!\n", gBoard[row][col]);
+		printBoard();
+		return 2;
+	}
+	gBoard[row][col] = 'X';
+	
+	if (checkWinner('X')) {
+		printBoard();
+		printf("YOU WIN!");
+		clearArray();
+		return 3;
+	}
+	
+	botMove();
+	printBoard();
+	
+	if (checkWinner('O')){
+		printf("YOU LOSE!");
+		clearArray();
+		return 3;
+	}
+
+    for (int i = 0; i < 9; ++i) {
+        if (gBoard[i / 3][i % 3] == ' ') {
+            boardFull = false;
+            oneDArray[i] = 'E';
+        } else {
+            oneDArray[i] = gBoard[i / 3][i % 3];
+        }
+    }
+	
+	if(boardFull){
+		printf("It's a tie!");
+		clearArray();
+		return 3;
+	}
+	
+    writeVar(oneDArray);
+	
+    return 0;
 }
