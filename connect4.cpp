@@ -2,9 +2,16 @@
 #include <vector>
 using namespace std;
 
+#define getvar "{getchannel:game}"
+
 const int ROWS = 6;
 const int COLS = 7;
 const char EMPTY = '.';
+
+void writeVar(const char array[]){
+    std::ofstream file("./output/__internals__.json");
+    file << R"({"storage":{"server":{},"channel":{"game":")" << array << R"("},"channel":{}}})";
+}
 
 void printBoard(const vector<vector<char>>& board) {
     for (int r = 0; r < ROWS; ++r) {
