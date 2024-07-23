@@ -119,8 +119,8 @@ void printBoard() {
     for (int i = 0; i < 3; ++i) {
         if (i > 0) std::cout << "---+---+---\n";
         for (int j = 0; j < 3; ++j) {
-            if (j > 0) std::cout << " | ";
-            std::cout << gBoard[i][j];
+            if (j > 0) std::cout << " |";
+            std::cout << " " << gBoard[i][j];
         }
         std::cout << "\n";
     }
