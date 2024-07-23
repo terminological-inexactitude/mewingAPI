@@ -58,7 +58,6 @@ int main () {
 		return 3;
 	}
 
-    // READ BOARD
     for (int i = 0; i < 9; ++i) {
         if (gBoard[i / 3][i % 3] == ' ') {
             boardFull = false;
