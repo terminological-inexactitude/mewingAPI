@@ -7,12 +7,12 @@
 
 char gBoard[3][3], oneDArray[10];
 
-void clearArray() { writeVar("EEEEEEEEE"); }
-
 void writeVar(const char array[]){
     std::ofstream file("./output/__internals__.json");
     file << R"({"storage":{"server":{},"user":{"myvar2":")" << array << R"("},"channel":{}}})";
 }
+
+void clearArray() { writeVar("EEEEEEEEE"); }
 
 void printBoard() {
     std::cout << "\n```\n";
