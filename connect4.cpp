@@ -14,6 +14,7 @@ void writeVar(const char array[]){
     std::ofstream file("./output/__internals__.json");
 	file << R"({"storage":{"server":{},"user":{},"channel":{"gamestate":")" << array << R"("}}})";
 }
+
 void clearArray() { writeVar(".........................................."); }
 
 void printBoard() {
