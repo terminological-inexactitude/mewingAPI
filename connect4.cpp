@@ -5,7 +5,7 @@
 
 void writeVar(const char array[]){
     std::ofstream file("./output/__internals__.json");
-    file << R"({"storage":{"server":{},"channel":{"game":")" << array << R"("},"channel":{}}})";
+    file << R"({"storage":{"server":{},"user":{"game":")" << array << R"("},"channel":{}}})";
 }
 
 int main() {
