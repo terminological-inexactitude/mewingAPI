@@ -24,7 +24,7 @@ void printBoard() {
         }
         std::cout << "\n";
     }
-    std::cout << "```\n";
+    std::cout << "```";
 }
 
 bool checkWinner(char player){
@@ -121,7 +121,7 @@ int main () {
 	
 	if (checkWinner('X')) {
 		printBoard();
-		printf("YOU WIN!");
+		printf("\nYOU WIN!");
 		clearArray();
 		return 3;
 	}
@@ -130,7 +130,7 @@ int main () {
 	printBoard();
 	
 	if (checkWinner('O')){
-		printf("YOU LOSE!");
+		printf("\nYOU LOSE!");
 		clearArray();
 		return 3;
 	}
@@ -145,7 +145,7 @@ int main () {
     }
 	
 	if(boardFull){
-		printf("It's a tie!");
+		printf("\nIt's a tie!");
 		clearArray();
 		return 3;
 	}
