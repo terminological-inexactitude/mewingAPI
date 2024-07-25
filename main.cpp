@@ -1,8 +1,6 @@
 #include <cstdio>
 
 int main() {
-    printf("```");
-    printf("testing");
-    printf("```");
+    printf("<:kleiner_happy:363444088965431298>");
     return 0;
 }
