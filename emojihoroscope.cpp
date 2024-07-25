@@ -13,7 +13,7 @@ int main()
     unsigned long long randomseed = usertag + daysSinceEpoch; // ensure user's only get 1 a day
     srand(randomseed);
 
-    int p = rand() % 30 + 1; // Range of 1 to 30 
+    int p = rand() % 35 + 1; // Range of 1 to 35 
 
     const char* s;
 
@@ -22,7 +22,7 @@ int main()
             s = "😄";
             break;
         case 2:
-            s = "😂";
+            s = "🍆🥚🥚";
             break;
         case 3:
             s = "😭";
@@ -46,7 +46,7 @@ int main()
             s = "🇲🇿"; // inside joke, you wouldn't get it,,,,,,, 
             break;
         case 10:
-            s = "🫃";
+            s = "<:SKIBIDI:1212305687187824640>";
             break;
         case 11:
             s = "🎮🕹️🖥️"; // geeked up 
@@ -100,13 +100,28 @@ int main()
             s = "🚽 💩💩💩💩"; // haha stinkie 
             break;
         case 28:
-            s = "✈️🏢🏢"; // sorry
+            s = "✈️🏢🏢";
             break;
         case 29:
-            s = "🍍🍕"; // so sorry
+            s = "🍍🍕";
             break;
         case 30:
-            s = "😺🐟🤢🤮"; // nope, not sorry
+            s = "😺🐟🤢🤮";
+            break;
+		case 31:
+            s = "🤼‍♀️";
+            break;
+        case 32:
+            s = "🖕";
+            break;
+        case 33:
+            s = "<:kleiner_happy:363444088965431298>";
+            break;
+        case 34:
+            s = "<:sinister_kleiner:1121893499458027571>";
+            break;
+        case 35:
+            s = "<:hot_clown:1265986950876364851>";
             break;
         default:
             s = "❓"; // Just in case p is out of expected range
