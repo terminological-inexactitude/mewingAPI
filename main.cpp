@@ -5,7 +5,7 @@
 int main() {
     printf("<:kleiner_happy:363444088965431298>");
     printf("\n\n");
-    //printf("%lld", usertag);
+    printf("%lld", usertag);
     
     return 0;
 }
