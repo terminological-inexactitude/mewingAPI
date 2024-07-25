@@ -3,6 +3,7 @@
 
 #define input "{args}"
 #define usertag {id}LL
+#define getvar "{getchannel:game}"
 
 #define ROWS 6
 #define COLS 7
@@ -40,6 +41,14 @@ int main() {
     //printf("test");
 	
 	writeVar("id"); // save state of the game as an array
+	
+	// is er een spel gaande? 
+	// NEE -> user 1 of 2 | JA -> aan de beurt? NEE -> wacht op je beurt | JA -> maak beurt
+	
+	
+	if(input[0] >= '1' && input[0] <= '7'){
+		printf("correct input detected: %c, input[0]):
+	}
 	
     return 0;
 }
