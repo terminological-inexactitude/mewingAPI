@@ -46,7 +46,7 @@ int main() {
 	
 	
 	if(input[0] >= '1' && input[0] <= '7'){
-		printf("correct input detected: %c", input[0]):
+		printf("correct input detected: %c", input[0]);
 	}
 	
     return 0;
