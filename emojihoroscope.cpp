@@ -108,7 +108,7 @@ int main()
         case 30:
             s = "😺🐟🤢🤮";
             break;
-		case 31:
+	case 31:
             s = "🤼‍♀️";
             break;
         case 32:
