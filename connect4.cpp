@@ -39,7 +39,7 @@ int dropCoin(int col, char coin) {
 int main() {
     //printf("test");
 	
-	writeVar("id"); // save state of the game as an array
+	writeVar("usertag"); // save state of the game as an array
 	
 	// is er een spel gaande? 
 	// NEE -> user 1 of 2 | JA -> aan de beurt? NEE -> wacht op je beurt | JA -> maak beurt
