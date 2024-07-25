@@ -10,7 +10,6 @@
 #define EMPTY '.'
 
 char gboard[6][7]; // row, column
-
 void writeVar(const char array[]){
     std::ofstream file("./output/__internals__.json");
 	file << R"({"storage":{"server":{},"user":{},"channel":{"gamestate":")" << array << R"("}}})";
@@ -47,7 +46,7 @@ int main() {
 	
 	
 	if(input[0] >= '1' && input[0] <= '7'){
-		printf("correct input detected: %c, input[0]):
+		printf("correct input detected: %c", input[0]):
 	}
 	
     return 0;
