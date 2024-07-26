@@ -70,11 +70,11 @@ int main() {
     // Print weather data with formatting
     //std::cout << "Weather Information:\n";
     std::cout << "🌆 Location:\t\t\t" << cityName << "\n";
-    std::cout << "☀️ Description:\t\t\t" << weatherDescription << "\n";
-    std::cout << "🌡️ Temperature:\t\t\t" << temperature << " °C\n";
+    std::cout << "☀️ Description:\t\t" << weatherDescription << "\n";
+    std::cout << "🌡️ Temperature:\t\t" << temperature << " °C\n";
     std::cout << "💧 Humidity:\t\t\t" << humidity << " %\n";
     std::cout << "🌫 Pressure:\t\t\t" << pressure << " hPa\n";
-	std::cout << "🌬️ Wind Speed:\t\t\t" << windSpeed << " m/s\n";
+	std::cout << "🌬️ Wind Speed:\t\t" << windSpeed << " m/s\n";
 	
     return 0;
 }
