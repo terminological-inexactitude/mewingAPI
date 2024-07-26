@@ -26,8 +26,9 @@ int main() {
 
 	
     std::string apiKey = "41fd771949d80645893f3abaea9cca15";
-    std::string location = "London"; // You can change this to any location
-    std::string command = "wget -qO- \"http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey + "&units=metric\" > weather.json";
+    //std::string location = "London"; // You can change this to any location
+    std::string location = input;
+	std::string command = "wget -qO- \"http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey + "&units=metric\" > weather.json";
 
     // Execute the command to fetch weather data
     system(command.c_str());
@@ -42,10 +43,12 @@ int main() {
     std::string cityName = findValue(jsonData, "name");
     std::string temperature = findValue(jsonData, "temp");
     std::string weatherDescription = findValue(jsonData, "description");
+    std::string humidity = findValue(jsonData, "humidity");
 
     std::cout << "Location: " << cityName << std::endl;
     std::cout << "Temperature: " << temperature << " °C" << std::endl;
     std::cout << "Weather: " << weatherDescription << std::endl;
+    std::cout << "Humidity: " << humidity << " %" << std::endl;
 
     return 0;
 }
