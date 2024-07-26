@@ -14,16 +14,6 @@ void writeVar(const char array[]){
 	file << R"({"storage":{"server":{},"user":{},"channel":{"gamestate":")" << array << R"("}}})";
 }
 
-void userID1(long long id){
-    std::ofstream file("./output/__internals__.json");
-	file << R"({"storage":{"server":{},"user":{},"channel":{"userid1":)" << id << R"(}}})";
-}
-
-void userID2(long long id){
-    std::ofstream file("./output/__internals__.json");
-	file << R"({"storage":{"server":{},"user":{},"channel":{"userid2":)" << id << R"(}}})";
-}
-
 void clearArray() { writeVar(".........................................."); }
 
 void clearID();
@@ -51,19 +41,6 @@ int main() {
     printf("testje");
 	
 	writeVar("gamestate example"); // save state of the game as an array
-	
-	//235915631445147650
-	
-	long long exampletag = 123456789012345678LL;					
-	
-	userID1(exampletag);
-	
-	long long exampletagsecond = 987654321087654321LL; 
-	
-	userID2(exampletagsecond);
-	
-	// is er een spel gaande? 
-	// NEE -> user 1 of 2 | JA -> aan de beurt? NEE -> wacht op je beurt | JA -> maak beurt
 	
 	if(input[0] >= '1' && input[0] <= '7'){
 		printf("correct input detected: %c", input[0]);
