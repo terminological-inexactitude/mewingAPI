@@ -3,9 +3,11 @@
 #define usertag {id}LL
 
 int main() {
+    printf("test");
     printf("#<:kleiner_happy:363444088965431298>");
-    printf("\n\n");
-    printf("%lld", usertag);
+    
+    //printf("\n\n");
+    //printf("%lld", usertag);
     
     return 0;
 }
