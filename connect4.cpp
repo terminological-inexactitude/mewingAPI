@@ -27,6 +27,8 @@ void userID2(long long id){
 
 void clearArray() { writeVar(".........................................."); }
 
+void clearID();
+
 void printBoard() {
     for (int r = 0; r < 6; ++r) { // rows
         for (int c = 0; c < 7; ++c) { // columns
@@ -47,13 +49,13 @@ int dropCoin(int col, char coin) {
 }
 
 int main() {
-    //printf("test");
+    printf("test");
 	
 	writeVar("gamestate example"); // save state of the game as an array
 	
-	userID1(usertag);
+	//userID1(usertag);
 	
-	userID2(0);
+	//userID2(0);
 	
 	// is er een spel gaande? 
 	// NEE -> user 1 of 2 | JA -> aan de beurt? NEE -> wacht op je beurt | JA -> maak beurt
