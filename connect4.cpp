@@ -51,7 +51,7 @@ int dropCoin(int col, char coin) {
 int main() {
     printf("test");
 	
-	//writeVar("gamestate example"); // save state of the game as an array
+	writeVar("gamestate example"); // save state of the game as an array
 	
 	userID1(usertag);
 	
