@@ -23,14 +23,16 @@ std::string findValue(const std::string& json, const std::string& key) {
 
 int main() {
 	if(input == ""){
-		printf("please specify a city!);
+		printf("please specify a city!");
 		return 1;
 	}
 	
-	if(input == "asdf"){
-		printf("%s is not a city.", input);
-		return 1;
-	}
+	// Check if JSON data contains error message
+    if (jsonData.find("city not found") != std::string::npos ||
+        jsonData.find("404") != std::string::npos) {
+        printf("%s was not found. womp womp", input);
+        return 1;
+    }
 	
     std::string apiKey = "41fd771949d80645893f3abaea9cca15";
     //std::string location = "London"; // You can change this to any location
@@ -53,11 +55,13 @@ int main() {
     std::string humidity = findValue(jsonData, "humidity");
 	std::string pressure = findValue(jsonData, "pressure");
 
-    std::cout << "Location: " << cityName << std::endl;
-    std::cout << "Temperature: " << temperature << " °C" << std::endl;
-    std::cout << "Weather: " << weatherDescription << std::endl;
-    std::cout << "Humidity: " << humidity << " %" << std::endl;
-	std::cout << "Pressure: " << humidity << " hPa" << std::endl;
+    // Print weather data with formatting
+    std::cout << "Weather Information:\n";
+    std::cout << "Location:\t\t" << cityName << "\n";
+    std::cout << "Temperature:\t\t" << temperature << " °C\n";
+    std::cout << "Weather:\t\t" << weatherDescription << "\n";
+    std::cout << "Humidity:\t\t" << humidity << " %\n";
+    std::cout << "Pressure:\t\t" << pressure << " hPa\n";
 	
     return 0;
 }
