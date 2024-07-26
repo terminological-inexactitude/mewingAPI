@@ -15,14 +15,14 @@ void writeVar(const char array[]){
 	file << R"({"storage":{"server":{},"user":{},"channel":{"gamestate":")" << array << R"("}}})";
 }
 
-void userID1(const char array[]){
+void userID1(long long id){
     std::ofstream file("./output/__internals__.json");
-	file << R"({"storage":{"server":{},"user":{},"channel":{"userid1":")" << array << R"("}}})";
+	file << R"({"storage":{"server":{},"user":{},"channel":{"userid1":)" << id << R"(}}})";
 }
 
-void userID2(const char array[]){
+void userID1(long long id){
     std::ofstream file("./output/__internals__.json");
-	file << R"({"storage":{"server":{},"user":{},"channel":{"userid2":")" << array << R"("}}})";
+	file << R"({"storage":{"server":{},"user":{},"channel":{"userid2":)" << id << R"(}}})";
 }
 
 void clearArray() { writeVar(".........................................."); }
@@ -53,7 +53,7 @@ int main() {
 	
 	userID1(usertag);
 	
-	//userID2();
+	userID2(0);
 	
 	// is er een spel gaande? 
 	// NEE -> user 1 of 2 | JA -> aan de beurt? NEE -> wacht op je beurt | JA -> maak beurt
