@@ -127,7 +127,7 @@ int main()
             s = "❓"; // Just in case p is out of expected range
     }
 
-    prinf("Yuor emoji of today is: \n# %s", s);
+    printf("Your emoji of today is: \n# %s", s);
 
     return 0;
 }
