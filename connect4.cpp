@@ -2,7 +2,7 @@
 #include <fstream>
 
 #define input "{args}"
-#define usertag {id}LL
+
 #define getvar "{getchannel:game}"
 
 #define ROWS 6
@@ -52,6 +52,11 @@ int main() {
     printf("testing");
 	
 	writeVar("gamestate example"); // save state of the game as an array
+	
+	long long usertag = 123456789012345678LL;
+						
+						//235915631445147650
+						
 	
 	userID1(usertag);
 	
