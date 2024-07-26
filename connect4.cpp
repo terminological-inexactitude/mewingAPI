@@ -20,7 +20,7 @@ void userID1(long long id){
 	file << R"({"storage":{"server":{},"user":{},"channel":{"userid1":)" << id << R"(}}})";
 }
 
-void userID1(long long id){
+void userID2(long long id){
     std::ofstream file("./output/__internals__.json");
 	file << R"({"storage":{"server":{},"user":{},"channel":{"userid2":)" << id << R"(}}})";
 }
