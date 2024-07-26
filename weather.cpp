@@ -22,9 +22,6 @@ std::string findValue(const std::string& json, const std::string& key) {
 }
 
 int main() {
-    printf("cool weather app\n\n");
-
-	
     std::string apiKey = "41fd771949d80645893f3abaea9cca15";
     //std::string location = "London"; // You can change this to any location
     std::string location = input;
