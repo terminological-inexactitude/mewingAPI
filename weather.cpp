@@ -22,6 +22,16 @@ std::string findValue(const std::string& json, const std::string& key) {
 }
 
 int main() {
+	if(input == ""){
+		printf("please specify a city!);
+		return 1;
+	}
+	
+	if(input == "asdf"){
+		printf("%s is not a city.", input);
+		return 1;
+	}
+	
     std::string apiKey = "41fd771949d80645893f3abaea9cca15";
     //std::string location = "London"; // You can change this to any location
     std::string location = input;
