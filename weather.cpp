@@ -52,13 +52,6 @@ int main() {
     buffer << file.rdbuf();
     std::string jsonData = buffer.str();
 
-    // Check if JSON data contains error message
-    if (jsonData.find("city not found") != std::string::npos ||
-        jsonData.find("404") != std::string::npos) {
-         std::cerr << "Error: the city " << input << " was not found. Womp womp" << std::endl;
-		return 1;
-    }
-
     // Parse and display the weather data
     std::string cityName = findValue(jsonData, "name");
     std::string weatherDescription = findValue(jsonData, "description");
@@ -69,11 +62,11 @@ int main() {
 
     // Print weather data with formatting
     //std::cout << "Weather Information:\n";
-    std::cout << "🌆 Location:\t\t\t" << cityName << "\n";
-    std::cout << "☀️ Description:\t\t" << weatherDescription << "\n";
+    std::cout << "🌆 Location:  \t\t\t" << cityName << "\n";
+    std::cout << "☀️ Description: \t\t" << weatherDescription << "\n";
     std::cout << "🌡️ Temperature:\t\t" << temperature << " °C\n";
-    std::cout << "💧 Humidity:\t\t\t" << humidity << " %\n";
-    std::cout << "🌫 Pressure:\t\t\t" << pressure << " hPa\n";
+    std::cout << "💧 Humidity: \t\t\t" << humidity << " %\n";
+    std::cout << "🌫 Pressure: \t\t\t" << pressure << " hPa\n";
 	std::cout << "🌬️ Wind Speed:\t\t" << windSpeed << " m/s\n";
 	
     return 0;
