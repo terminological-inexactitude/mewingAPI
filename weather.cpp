@@ -41,11 +41,13 @@ int main() {
     std::string temperature = findValue(jsonData, "temp");
     std::string weatherDescription = findValue(jsonData, "description");
     std::string humidity = findValue(jsonData, "humidity");
+	std::string pressure = findValue(jsonData, "pressure");
 
     std::cout << "Location: " << cityName << std::endl;
     std::cout << "Temperature: " << temperature << " °C" << std::endl;
     std::cout << "Weather: " << weatherDescription << std::endl;
     std::cout << "Humidity: " << humidity << " %" << std::endl;
-
+	std::cout << "Pressure: " << humidity << " hPa" << std::endl;
+	
     return 0;
 }
