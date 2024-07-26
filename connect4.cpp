@@ -15,6 +15,16 @@ void writeVar(const char array[]){
 	file << R"({"storage":{"server":{},"user":{},"channel":{"gamestate":")" << array << R"("}}})";
 }
 
+void userID1(const char array[]){
+    std::ofstream file("./output/__internals__.json");
+	file << R"({"storage":{"server":{},"user":{},"channel":{"userid1":")" << array << R"("}}})";
+}
+
+void userID2(const char array[]){
+    std::ofstream file("./output/__internals__.json");
+	file << R"({"storage":{"server":{},"user":{},"channel":{"userid2":")" << array << R"("}}})";
+}
+
 void clearArray() { writeVar(".........................................."); }
 
 void printBoard() {
@@ -39,7 +49,11 @@ int dropCoin(int col, char coin) {
 int main() {
     //printf("test");
 	
-	writeVar("usertag"); // save state of the game as an array
+	writeVar("gamestate example"); // save state of the game as an array
+	
+	userID1(usertag);
+	
+	//userID2();
 	
 	// is er een spel gaande? 
 	// NEE -> user 1 of 2 | JA -> aan de beurt? NEE -> wacht op je beurt | JA -> maak beurt
