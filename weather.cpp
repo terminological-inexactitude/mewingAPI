@@ -65,6 +65,7 @@ int main() {
     std::string temperature = findValue(jsonData, "temp");
     std::string humidity = findValue(jsonData, "humidity");
 	std::string pressure = findValue(jsonData, "pressure");
+	std::string windSpeed = findValue(jsonData, "speed");
 
     // Print weather data with formatting
     //std::cout << "Weather Information:\n";
@@ -72,7 +73,8 @@ int main() {
     std::cout << "☀️ Description:\t\t\t" << weatherDescription << "\n";
     std::cout << "🌡️ Temperature:\t\t\t" << temperature << " °C\n";
     std::cout << "💧 Humidity:\t\t\t" << humidity << " %\n";
-    std::cout << "🌬️ Pressure:\t\t\t" << pressure << " hPa\n";
+    std::cout << "🌫 Pressure:\t\t\t" << pressure << " hPa\n";
+	std::cout << "🌬️ Wind Speed:\t\t\t" << windSpeed << " m/s\n";
 	
     return 0;
 }
