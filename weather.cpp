@@ -61,16 +61,16 @@ int main() {
 
     // Parse and display the weather data
     std::string cityName = findValue(jsonData, "name");
-    std::string temperature = findValue(jsonData, "temp");
     std::string weatherDescription = findValue(jsonData, "description");
+    std::string temperature = findValue(jsonData, "temp");
     std::string humidity = findValue(jsonData, "humidity");
 	std::string pressure = findValue(jsonData, "pressure");
 
     // Print weather data with formatting
     std::cout << "Weather Information:\n";
     std::cout << "Location:\t\t" << cityName << "\n";
-    std::cout << "Temperature:\t\t" << temperature << " °C\n";
     std::cout << "Weather:\t\t" << weatherDescription << "\n";
+    std::cout << "Temperature:\t\t" << temperature << " °C\n";
     std::cout << "Humidity:\t\t" << humidity << " %\n";
     std::cout << "Pressure:\t\t" << pressure << " hPa\n";
 	
