@@ -37,7 +37,7 @@ int main() {
     int result = system(command.c_str());
     if (result != 0) {
         //std::cerr << "Error: Failed to fetch weather data." << std::endl;
-		std::cerr << "Error: the city " << input << " was not found. Womp womp" << std::endl;
+		std::cerr << "Error: the city '" << input << "' was not found. Womp womp" << std::endl;
         return 1;
     }
 
