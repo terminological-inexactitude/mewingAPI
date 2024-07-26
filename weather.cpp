@@ -36,7 +36,8 @@ int main() {
     // Execute the command
     int result = system(command.c_str());
     if (result != 0) {
-        std::cerr << "Error: Failed to fetch weather data." << std::endl;
+        //std::cerr << "Error: Failed to fetch weather data." << std::endl;
+		std::cerr << "Error: the city " << input << " was not found. Womp womp" << std::endl;
         return 1;
     }
 
@@ -54,8 +55,7 @@ int main() {
     // Check if JSON data contains error message
     if (jsonData.find("city not found") != std::string::npos ||
         jsonData.find("404") != std::string::npos) {
-        std::cerr << "Error: Location not found. Please check your input." << std::endl;
-        printf("\nThe city '%s' was not found. womp womp", input);
+         std::cerr << "Error: the city " << input << " was not found. Womp womp" << std::endl;
 		return 1;
     }
 
