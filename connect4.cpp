@@ -2,9 +2,8 @@
 #include <fstream>
 
 #define input "{args}"
-
+#define usertag {id}LL
 #define getvar "{getchannel:game}"
-
 #define ROWS 6
 #define COLS 7
 #define EMPTY '.'
@@ -53,18 +52,18 @@ int main() {
 	
 	writeVar("gamestate example"); // save state of the game as an array
 	
-	long long usertag = 123456789012345678LL;
-						
-						//235915631445147650
-						
+	//235915631445147650
 	
-	userID1(usertag);
+	long long exampletag = 123456789012345678LL;					
 	
-	//userID2(0);
+	userID1(exampletag);
+	
+	long long exampletagsecond = 987654321087654321LL; 
+	
+	userID2(exampletagsecond);
 	
 	// is er een spel gaande? 
 	// NEE -> user 1 of 2 | JA -> aan de beurt? NEE -> wacht op je beurt | JA -> maak beurt
-	
 	
 	if(input[0] >= '1' && input[0] <= '7'){
 		printf("correct input detected: %c", input[0]);
