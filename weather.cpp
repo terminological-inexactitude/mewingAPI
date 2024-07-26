@@ -27,26 +27,38 @@ int main() {
 		return 1;
 	}
 	
-	// Check if JSON data contains error message
-    if (jsonData.find("city not found") != std::string::npos ||
-        jsonData.find("404") != std::string::npos) {
-        printf("%s was not found. womp womp", input);
+	std::string location = input;
+	
+	std::string apiKey = "41fd771949d80645893f3abaea9cca15";
+	
+	// Construct the command to fetch weather data
+    std::string command = "wget -qO- \"http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey + "&units=metric\" > weather.json";
+
+    // Execute the command
+    int result = system(command.c_str());
+    if (result != 0) {
+        std::cerr << "Error: Failed to fetch weather data." << std::endl;
         return 1;
     }
-	
-    std::string apiKey = "41fd771949d80645893f3abaea9cca15";
-    //std::string location = "London"; // You can change this to any location
-    std::string location = input;
-	std::string command = "wget -qO- \"http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey + "&units=metric\" > weather.json";
-
-    // Execute the command to fetch weather data
-    system(command.c_str());
 
     // Read the JSON data from the file
     std::ifstream file("weather.json");
+    if (!file) {
+        std::cerr << "Error: Failed to open the file for reading." << std::endl;
+        return 1;
+    }
+	
     std::stringstream buffer;
     buffer << file.rdbuf();
     std::string jsonData = buffer.str();
+
+    // Check if JSON data contains error message
+    if (jsonData.find("city not found") != std::string::npos ||
+        jsonData.find("404") != std::string::npos) {
+        //std::cerr << "Error: Location not found. Please check your input." << std::endl;
+        printf("The city '%s' was not found. womp womp", input);
+		return 1;
+    }
 
     // Parse and display the weather data
     std::string cityName = findValue(jsonData, "name");
@@ -65,3 +77,30 @@ int main() {
 	
     return 0;
 }
+
+/*
+
+
+	// Check if JSON data contains error message
+    if (jsonData.find("city not found") != std::string::npos ||
+        jsonData.find("404") != std::string::npos) {
+        printf("The city '%s' was not found. womp womp", input);
+        return 1;
+    }
+	
+    std::string apiKey = "41fd771949d80645893f3abaea9cca15";
+    //std::string location = "London"; // You can change this to any location
+    std::string location = input;
+	std::string command = "wget -qO- \"http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey + "&units=metric\" > weather.json";
+
+    // Execute the command to fetch weather data
+    system(command.c_str());
+
+    // Read the JSON data from the file
+    std::ifstream file("weather.json");
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    std::string jsonData = buffer.str();
+	
+	
+	*/
