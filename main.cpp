@@ -1,5 +1,4 @@
 #include <cstdio>
-#include <curl/curl.h>
 
 #define usertag {id}LL
 
