@@ -46,7 +46,7 @@ int main()
             s = "🇲🇿"; // inside joke, you wouldn't get it,,,,,,, 
             break;
         case 10:
-            s = "<:SKIBIDI:1212305687187824640>";
+            s = "<:skibid:1207635444909481984>";
             break;
         case 11:
             s = "🎮🕹️🖥️"; // geeked up 
