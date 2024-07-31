@@ -115,10 +115,10 @@ int main()
             s = "🖕";
             break;
         case 33:
-            s = "<:kleiner_happy:363444088965431298>";
+            s = "<:sinister_kleiner:1121893499458027571>";
             break;
         case 34:
-            s = "<:sinister_kleiner:1121893499458027571>";
+            s = "<:kleiner_happy:363444088965431298>";
             break;
         case 35:
             s = "🤫🧏🏻‍♂️";
