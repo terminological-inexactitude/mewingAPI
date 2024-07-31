@@ -121,7 +121,7 @@ int main()
             s = "<:sinister_kleiner:1121893499458027571>";
             break;
         case 35:
-            s = "<:hot_clown:1265986950876364851>";
+            s = "🤫🧏🏻‍♂️";
             break;
         default:
             s = "❓"; // Just in case p is out of expected range
