@@ -12,7 +12,7 @@ int main() {
     printf("# <:kleiner_happy:363444088965431298><:kleiner_happy:363444088965431298><:kleiner_happy:363444088965431298>\n");
     
     printf("\n");
-    printf("<:skibid:1207635444909481984>");
+    printf("<:skibid:1207635444909481984>\n");
     printf("# <:skibid:1207635444909481984>");
 
     
