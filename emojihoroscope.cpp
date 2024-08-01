@@ -10,7 +10,7 @@ int main()
     setenv("TZ", "Europe/Amsterdam", 1); // set timezone to Amsterdam
     tzset(); // apply timezone change
 
-    //char* dt = ctime(&seconds);  // convert time_t string
+    //char* dt = ctime(&seconds);  // convert time_t to a string
     //printf("The updated local date and time is: %s \n\n", dt);
 	
     int daysSinceEpoch = seconds / (60 * 60 * 24);
