@@ -14,7 +14,7 @@ int main()
     //printf("The updated local date and time is: %s \n\n", dt);
 	
     int daysSinceEpoch = seconds / (60 * 60 * 24);
-    unsigned long long randomseed = usertag + daysSinceEpoch; // ensure user's only get 1 a day
+    unsigned long long randomseed = usertag + daysSinceEpoch; // ensure users only get 1 result per day
     
     srand(randomseed);
     int p = rand() % 35 + 1; // Range of 1 to 35 
