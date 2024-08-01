@@ -1,13 +1,12 @@
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
+
 #define usertag {id}LL // THANKS WARDEN
 
 int main() 
 {
-    time_t seconds;
-
-    seconds = time(NULL);
+    time_t seconds = time(NULL);
     int daysSinceEpoch = seconds / (60 * 60 * 24);
 
     unsigned long long randomseed = usertag + daysSinceEpoch; // ensure user's only get 1 a day
