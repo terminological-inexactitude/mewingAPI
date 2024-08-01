@@ -1,5 +1,5 @@
 #include <cstdio>
-#include <cstdlib>
+#include <cstdlib>	// setenv and tzset
 #include <ctime>
 
 #define usertag {id}LL // THANKS WARDEN
@@ -7,6 +7,9 @@
 int main() 
 {
     time_t seconds = time(NULL);
+    setenv("TZ", "Europe/Amsterdam", 1); // Set timezone to Amsterdam
+    tzset(); // apply timezone change
+	
     int daysSinceEpoch = seconds / (60 * 60 * 24);
 
     unsigned long long randomseed = usertag + daysSinceEpoch; // ensure user's only get 1 a day
