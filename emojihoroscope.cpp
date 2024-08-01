@@ -7,11 +7,11 @@
 int main() 
 {
     time_t seconds = time(NULL);
-    setenv("TZ", "Europe/Amsterdam", 1); // Set timezone to Amsterdam
+    setenv("TZ", "Europe/Amsterdam", 1); // set timezone to Amsterdam
     tzset(); // apply timezone change
 
-    char* dt = ctime(&seconds);  // Convert time_t to a human-readable string
-    printf("The updated local date and time is: %s \n\n", dt);  // Print the string	
+    //char* dt = ctime(&seconds);  // convert time_t string
+    //printf("The updated local date and time is: %s \n\n", dt);
 	
     int daysSinceEpoch = seconds / (60 * 60 * 24);
     unsigned long long randomseed = usertag + daysSinceEpoch; // ensure user's only get 1 a day
