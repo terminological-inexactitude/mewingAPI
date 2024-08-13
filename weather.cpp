@@ -27,7 +27,7 @@ int main() {
 		return 1;
 	}
 	
-	std::string apiKey = "41fd771949d80645893f3abaea9cca15";
+	std::string apiKey = "41fd771949d80645893f3abaea9cca15"; // fuck with my key and it's all going private
 	std::string location = input;
 	
 	// Construct the command to fetch weather data
