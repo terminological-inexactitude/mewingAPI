@@ -70,9 +70,8 @@ void botMove() {
 	    }
 	}
     }
-
-    // Take center if available
-    if (gBoard[1][1] == ' ') { gBoard[1][1] = 'O'; return; }
+	
+    if (gBoard[1][1] == ' ') { gBoard[1][1] = 'O'; return; }  // Take center if available
     
     // Choose random available spot
     int r, c, count = 0;
