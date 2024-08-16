@@ -16,8 +16,6 @@ void writeVar(const char array[]){
 
 void clearArray() { writeVar(".........................................."); }
 
-void clearID();
-
 void printBoard() {
     for (int r = 0; r < 6; ++r) { // rows
         for (int c = 0; c < 7; ++c) { // columns
