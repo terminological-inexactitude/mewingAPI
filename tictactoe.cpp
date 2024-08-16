@@ -61,18 +61,14 @@ void botMove() {
         }
 
         // Check corners for diagonal winning/blocking moves
-        if (gBoard[0][0] == ' ' && gBoard[1][1] == m && gBoard[2][2] == m) {
-            gBoard[0][0] = 'O'; return;
-        }
-        if (gBoard[2][2] == ' ' && gBoard[1][1] == m && gBoard[0][0] == m) {
-            gBoard[2][2] = 'O'; return;
-        }
-        if (gBoard[0][2] == ' ' && gBoard[1][1] == m && gBoard[2][0] == m) {
-            gBoard[0][2] = 'O'; return;
-        }
-        if (gBoard[2][0] == ' ' && gBoard[1][1] == m && gBoard[0][2] == m) {
-            gBoard[2][0] = 'O'; return;
-        }
+	for (int i = 0; i < 2; ++i) {
+	    if (gBoard[i*2][i*2] == ' ' && gBoard[1][1] == m && gBoard[2-i*2][2-i*2] == m) {
+		gBoard[i*2][i*2] = 'O'; return;
+	    }
+	    if (gBoard[i*2][2-i*2] == ' ' && gBoard[1][1] == m && gBoard[2-i*2][i*2] == m) {
+		gBoard[i*2][2-i*2] = 'O'; return;
+	    }
+	}
     }
 
     // Take center if available
