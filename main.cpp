@@ -2,7 +2,7 @@
 
 #define usertag {id}LL
 #define turk "<a:dancing_turk:823716821915926549>"
-#define cat <a:MindBlown:998726738525827172>
+#define cat "<a:MindBlown:998726738525827172>"
 
 int main() {  
 
