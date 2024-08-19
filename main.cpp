@@ -5,7 +5,7 @@
 
 int main() {  
     printf("testing define \n\n");
-    printf("turk");
+    printf(turk);
 
     /*
     printf("Your emoji of today is:\n# <:kleiner_happy:363444088965431298>");
