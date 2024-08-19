@@ -1,11 +1,11 @@
 #include <cstdio>
 
 #define usertag {id}LL
-#define turk <a:dancing_turk:823716821915926549>
+#define turk "<a:dancing_turk:823716821915926549>"
 
 int main() {  
     printf("testing define \n\n");
-    printf(turk);
+    printf("%s", turk);
 
     /*
     printf("Your emoji of today is:\n# <:kleiner_happy:363444088965431298>");
