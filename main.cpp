@@ -4,12 +4,15 @@
 #define turk "<a:dancing_turk:823716821915926549>"
 #define cat "<a:MindBlown:998726738525827172>"
 #define quack "<a:QUACK:628770702316797983>"
+#define jeb "<a:krevolve:396055212286279680>"
+
 
 int main() {  
 
     printf("%s\n", cat);
     printf("%s\n", quack);
-
+    printf("%s\n", jeb);
+    
     /*	
     int rows = 6;
     int cols = 9;
