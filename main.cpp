@@ -7,8 +7,6 @@ int main() {
     printf("testing define \n\n");
     printf("turk");
 
-    
-
     /*
     printf("Your emoji of today is:\n# <:kleiner_happy:363444088965431298>");
     printf("# <:kleiner_happy:363444088965431298><:kleiner_happy:363444088965431298><:kleiner_happy:363444088965431298>\n");
@@ -18,9 +16,9 @@ int main() {
     printf("\n");
     printf("<:skibid:1207635444909481984>\n");
     printf("# <:skibid:1207635444909481984>");
+
+    printf("%lld", usertag);
     */
-    
-    //printf("%lld", usertag);
     
     return 0;
 }
