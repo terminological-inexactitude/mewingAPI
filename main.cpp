@@ -4,8 +4,18 @@
 #define turk "<a:dancing_turk:823716821915926549>"
 
 int main() {  
-    printf("testing define \n\n");
-    printf("%s", turk);
+    int rows = 6;
+    int cols = 9;
+
+	printf("# ");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) { 
+            printf("%s", turk);
+        }
+        if (i < rows - 1) {
+            printf("\n# ");
+        }
+    }
 
     /*
     printf("Your emoji of today is:\n# <:kleiner_happy:363444088965431298>");
