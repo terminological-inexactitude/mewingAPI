@@ -12,7 +12,7 @@ int main() {
     printf("%s\n", cat);
     printf("%s\n", quack);
     printf("%s\n", jeb);
-    printf("%s\n", twi)
+    printf("%s\n", twi);
         
     /*	
     int rows = 6;
