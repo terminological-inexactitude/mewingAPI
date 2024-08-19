@@ -2,12 +2,17 @@
 
 #define usertag {id}LL
 #define turk "<a:dancing_turk:823716821915926549>"
+#define cat <a:MindBlown:998726738525827172>
 
 int main() {  
+
+    printf("%s", cat);
+
+    /*	
     int rows = 6;
     int cols = 9;
 
-	printf("# ");
+    printf("# ");
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) { 
             printf("%s", turk);
@@ -16,6 +21,7 @@ int main() {
             printf("\n# ");
         }
     }
+    */
 
     /*
     printf("Your emoji of today is:\n# <:kleiner_happy:363444088965431298>");
