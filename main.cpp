@@ -3,10 +3,12 @@
 #define usertag {id}LL
 #define turk "<a:dancing_turk:823716821915926549>"
 #define cat "<a:MindBlown:998726738525827172>"
+#define quack "<a:QUACK:628770702316797983>"
 
 int main() {  
 
-    printf("%s", cat);
+    printf("%s\n", cat);
+    printf("%s\n", quack);
 
     /*	
     int rows = 6;
