@@ -20,7 +20,7 @@ void printBoard() {
     printf("\n```\n   %s  %s  %s\n", nums[1], nums[2], nums[3]);
     
     for (int i = 0; i < 3; ++i) {
-        printf("%s %c | %c | %c\n", nums[i + 1], gBoard[i][0], gBoard[i][1], gBoard[i][2]);
+        printf("%s  %c | %c | %c\n", nums[i + 1], gBoard[i][0], gBoard[i][1], gBoard[i][2]);
         if (i < 2) printf("  ---+---+---\n");
     }
 
