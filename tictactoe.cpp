@@ -15,16 +15,16 @@ void writeVar(const char array[]){
 void clearArray() { writeVar("EEEEEEEEE"); }
 
 void printBoard() {
-    std::cout << "\n```\n";
+    const char* nums[] = {"", "1️⃣", "2️⃣", "3️⃣"};
+    
+    printf("\n```\n    %s   %s   %s\n", nums[1], nums[2], nums[3]);
+    
     for (int i = 0; i < 3; ++i) {
-        if (i > 0) std::cout << "---+---+---\n";
-        for (int j = 0; j < 3; ++j) {
-            if (j > 0) std::cout << " |";
-            std::cout << " " << gBoard[i][j];
-        }
-        std::cout << "\n";
+        printf("%s %c | %c | %c\n", nums[i + 1], gBoard[i][0], gBoard[i][1], gBoard[i][2]);
+        if (i < 2) printf("  ---+---+---\n");
     }
-    std::cout << "```";
+
+    printf("```");
 }
 
 bool checkWinner(char player){
