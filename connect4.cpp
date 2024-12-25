@@ -38,7 +38,7 @@ int dropCoin(int col, char coin) {
 int main() {
     printf("test");
 	
-	writeVar("gamestate example"); // save state of the game as an array
+	//writeVar("gamestate example"); // save state of the game as an array
 	
 	if(input[0] >= '1' && input[0] <= '7'){
 		printf("correct input detected: %c", input[0]);
