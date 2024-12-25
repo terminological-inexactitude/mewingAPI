@@ -46,8 +46,6 @@ int main() {
 		printf("Board cleared!");		
 		clearArray();
 		return 1;
-	}else if(input == "titten"){
-		printf("kartoffelsalat");
 	}
 	
     return 0;
