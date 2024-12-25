@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <fstream>
 
 #define input "{args}"
@@ -42,6 +42,8 @@ int main() {
 	
 	if(input[0] >= '1' && input[0] <= '7'){
 		printf("correct input detected: %c", input[0]);
+	}else if(input == "titten"){
+		print("kartoffelsalat");
 	}
 	
     return 0;
