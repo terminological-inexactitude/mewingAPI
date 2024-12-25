@@ -43,7 +43,7 @@ int main() {
 	if(input[0] >= '1' && input[0] <= '7'){
 		printf("correct input detected: %c", input[0]);
 	}else if(input == "titten"){
-		print("kartoffelsalat");
+		printf("kartoffelsalat");
 	}
 	
     return 0;
