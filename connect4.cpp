@@ -42,6 +42,11 @@ int main() {
 	
 	if(input[0] >= '1' && input[0] <= '7'){
 		printf("correct input detected: %c", input[0]);
+	else if(input == "clear"){
+		printf("Board cleared!");		
+		clearArray();
+		return 1;
+	}
 	}else if(input == "titten"){
 		printf("kartoffelsalat");
 	}
