@@ -1,6 +1,6 @@
 import urllib.request, json, sys
 
-print(f"testing")
+print("test")
 
 try:
     url = f"https://tankerkoenig.de{K}"
