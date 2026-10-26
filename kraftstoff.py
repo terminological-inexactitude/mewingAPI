@@ -2,16 +2,15 @@ import json
 import os
 import sys
 
-print("jlk")
+print("1234")
 
 station_id = "d7d11f7c-7833-4f9c-b17b-03c0049ff8d7"
 
-api_key = sys.argv[1] if len(sys.argv) > 1 else "MISSING_KEY"
+api_key = str(api_input).strip().split()[0] if 'api_input' in locals() else "MISSING"
 
 url = "https://tankerkoenig.de" + station_id + "&apikey=" + api_key
 
 command = 'curl -s -A "Mozilla/5.0" "' + url + '" > price.json'
-
 result = os.system(command)
 
 if result != 0:
