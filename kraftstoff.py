@@ -9,7 +9,7 @@ else:
         print("City not found (Germany only)")
     else:
         c=r[0]
-        d=g("https://creativecommons.tankerkoenig.de/json/list.php?lat=%s&lng=%s&rad=5&type=all&apikey=YOUR-KEY" % (c["latitude"],c["longitude"]))
+        d=g("https://creativecommons.tankerkoenig.de/json/list.php?lat=%s&lng=%s&rad=5&type=all&apikey=84c7c365-1767-4614-a8d1-10ee0c3e37d8" % (c["latitude"],c["longitude"]))
         f=lambda x: "%.3f" % x if x else "n/a"
         print("**Fuel near %s**" % c["name"])
         for s in d["stations"][:8]:
