@@ -2,20 +2,15 @@ import json
 import os
 import sys
 
-print("1234")
+print("testing")
 
+api_key = str(API_TOKEN).strip()
 station_id = "d7d11f7c-7833-4f9c-b17b-03c0049ff8d7"
-
-api_key = str(api_input).strip().split()[0] if 'api_input' in locals() else "MISSING"
 
 url = "https://tankerkoenig.de" + station_id + "&apikey=" + api_key
 
 command = 'curl -s -A "Mozilla/5.0" "' + url + '" > price.json'
-result = os.system(command)
-
-if result != 0:
-    print("❌ Error: Failed to execute system data download link.")
-    sys.exit(1)
+os.system(command)
 
 try:
     with open("price.json", "r", encoding="utf-8") as file:
@@ -39,6 +34,6 @@ try:
         print("├─ E10:    `" + e10 + "`")
         print("└─ Diesel: `" + di + "`")
     else:
-        print("❌ API Error: Invalid payload block.")
+        print("❌ API Error: Invalid data packet layout.")
 except Exception as err:
-    print("❌ File Runtime Error: " + str(err))
+    print("❌ Render Execution Error: " + str(err))
