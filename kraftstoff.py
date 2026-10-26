@@ -1,34 +1,45 @@
 import json
+import os
 import sys
 
-print("asdf")
+print("jlk")
 
-raw_input = sys.argv[1] if len(sys.argv) > 1 else "{}"
+station_id = "d7d11f7c-7833-4f9c-b17b-03c0049ff8d7"
+
+api_key = sys.argv[1] if len(sys.argv) > 1 else "MISSING_KEY"
+
+url = "https://tankerkoenig.de" + station_id + "&apikey=" + api_key
+
+command = 'curl -s -A "Mozilla/5.0" "' + url + '" > price.json'
+
+result = os.system(command)
+
+if result != 0:
+    print("❌ Error: Failed to execute system data download link.")
+    sys.exit(1)
 
 try:
-    d = json.loads(raw_input)
-    if d.get("ok") and d.get("stations"):
-        print("⛽ **LOCAL STATION PACKET** ⛽\n")
+    with open("price.json", "r", encoding="utf-8") as file:
+        raw_data = file.read()
         
-        for s in d["stations"]:
-            if s.get("id") == "d7d11f7c-7833-4f9c-b17b-03c0049ff8d7" or s.get("brand", "").upper() == "AVIA":
-                
-                v_e5 = "€" + str(round(s['e5'], 3)) if isinstance(s.get('e5'), (int, float)) else "N/A"
-                v_e10 = "€" + str(round(s['e10'], 3)) if isinstance(s.get('e10'), (int, float)) else "N/A"
-                v_di = "€" + str(round(s['diesel'], 3)) if isinstance(s.get('diesel'), (int, float)) else "N/A"
-                
-                status = "🟢 OPEN" if s.get('isOpen') else "🔴 CLOSED"
-                brand = str(s.get('brand', '-')).upper()
-                name = str(s.get('name'))
-                
-                print("**" + brand + "** (" + name + ") | " + status)
-                print("├─ E5:     `" + v_e5 + "`")
-                print("├─ E10:    `" + v_e10 + "`")
-                print("└─ Diesel: `" + v_di + "`\n")
-                break
-        else:
-            print("⚠️ Target station not found within the local coordinate radius.")
+    d = json.loads(raw_data)
+    if d.get("ok") and d.get("station"):
+        s = d["station"]
+        print("⛽ **STATION STATUS** ⛽\n")
+        
+        e5 = "€" + str(round(s['e5'], 3)) if isinstance(s.get('e5'), (int, float)) else "N/A"
+        e10 = "€" + str(round(s['e10'], 3)) if isinstance(s.get('e10'), (int, float)) else "N/A"
+        di = "€" + str(round(s['diesel'], 3)) if isinstance(s.get('diesel'), (int, float)) else "N/A"
+        
+        status = "🟢 OPEN" if s.get('isOpen') else "🔴 CLOSED"
+        brand = str(s.get('brand', '-')).upper()
+        name = str(s.get('name'))
+        
+        print("**" + brand + "** (" + name + ") | " + status)
+        print("├─ E5:     `" + e5 + "`")
+        print("├─ E10:    `" + e10 + "`")
+        print("└─ Diesel: `" + di + "`")
     else:
-        print("❌ API Error response payload validation check failed.")
+        print("❌ API Error: Invalid payload block.")
 except Exception as err:
-    print("❌ Render Parse Error: " + str(err))
+    print("❌ File Runtime Error: " + str(err))
