@@ -1,4 +1,4 @@
-import urllib.request, json
+import urllib.request, json, sys
 
 try:
     url = f"https://tankerkoenig.de{K}"
@@ -7,7 +7,7 @@ try:
         data = json.loads(r.read().decode())
     
     if not data.get("ok"):
-        print("❌ API Error")
+        print(f"❌ API Error. Response: {data}")
     else:
         print("⛽ **Rütenbrock Border Fuel Prices** 🇩🇪\n```\nBrand      | Status | E5    | E10\n-----------------------------------")
         for s in data.get("stations", []):
@@ -16,4 +16,4 @@ try:
             print(f"{brand} | {status} | €{s.get('e5'):.3f} | €{s.get('e10'):.3f}")
         print("```")
 except Exception as e:
-    print("❌ Failed to fetch data.")
+    print(f"❌ Python Exception: {type(e).__name__} - {str(e)}")
