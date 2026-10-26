@@ -1,12 +1,10 @@
-import urllib.request, json, sys
+import json
 
-print("test")
+print("json test")
 
 try:
-    url = f"https://tankerkoenig.de{K}"
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    with urllib.request.urlopen(req) as r:
-        data = json.loads(r.read().decode())
+    # RAW_JSON is injected dynamically as a string by NotSoBot
+    data = json.loads(RAW_JSON)
     
     if not data.get("ok"):
         print(f"❌ API Error. Response: {data}")
