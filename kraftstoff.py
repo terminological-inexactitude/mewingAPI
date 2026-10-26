@@ -2,16 +2,13 @@ import json
 import urllib.request
 import sys
 
-# Static parameters for your primary station
+print("asdf")
+
 station_id = "d7d11f7c-7833-4f9c-b17b-03c0049ff8d7"
-
-# We pass your API key as an argument via the Discord prompt command string
 api_key = sys.argv[1] if len(sys.argv) > 1 else "MISSING_KEY"
-
 url = "https://tankerkoenig.de" + station_id + "&apikey=" + api_key
 
 try:
-    # Explicitly forge a standard browser User-Agent header to pass the security firewall
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     
     with urllib.request.urlopen(req) as response:
@@ -22,7 +19,6 @@ try:
             s = d["station"]
             print("⛽ **STATION STATUS** ⛽\n")
             
-            # Safe extraction without f-string collisions with Euler's constant {e}
             v_e5 = "€" + str(round(s['e5'], 3)) if isinstance(s.get('e5'), (int, float)) else "N/A"
             v_e10 = "€" + str(round(s['e10'], 3)) if isinstance(s.get('e10'), (int, float)) else "N/A"
             v_di = "€" + str(round(s['diesel'], 3)) if isinstance(s.get('diesel'), (int, float)) else "N/A"
