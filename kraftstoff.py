@@ -10,7 +10,10 @@ else:
     else:
         c=r[0]
         d=g("https://creativecommons.tankerkoenig.de/json/list.php?lat=%s&lng=%s&rad=5&type=all&apikey=84c7c365-1767-4614-a8d1-10ee0c3e37d8" % (c["latitude"],c["longitude"]))
-        f=lambda x: "%.3f" % x if x else "n/a"
-        print("**Fuel near %s**" % c["name"])
+        f=lambda x: "%.3f" % x if x else "-"
+        o=["%-22s %6s %6s %6s" % ("Station","E5","E10","Diesel")]
         for s in d["stations"][:8]:
-            print("%s **%s** (%.1f km) E5 %s | E10 %s | D %s" % ("🟢" if s["isOpen"] else "🔴",s["name"],s["dist"],f(s["e5"]),f(s["e10"]),f(s["diesel"])))
+            n=s["name"][:22]
+            o.append("%-22s %6s %6s %6s" % (n,f(s["e5"]),f(s["e10"]),f(s["diesel"])) if s["isOpen"] else "%-22s closed" % n)
+        print("**Fuel near %s**" % c["name"])
+        print(chr(96)*3+"\n".join(o)+chr(96)*3)
