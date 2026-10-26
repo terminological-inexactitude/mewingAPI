@@ -1,5 +1,7 @@
 import urllib.request, json, sys
 
+print(f"testing")
+
 try:
     url = f"https://tankerkoenig.de{K}"
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
