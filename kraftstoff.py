@@ -10,9 +10,17 @@ else:
     else:
         c=r[0]
         d=g("https://creativecommons.tankerkoenig.de/json/list.php?lat=%s&lng=%s&rad=5&type=all&apikey=84c7c365-1767-4614-a8d1-10ee0c3e37d8" % (c["latitude"],c["longitude"]))
+        S=d["stations"][:8]
         f=lambda x: "%.3f" % x if x else "-"
-        o=["%-18s %6s %6s %6s %s" % ("Station","E5","E10","Diesel","Status")]
-        for s in d["stations"][:8]:
-            o.append("%-18s %6s %6s %6s %s" % (s["name"][:18],f(s["e5"]),f(s["e10"]),f(s["diesel"]),"open" if s["isOpen"] else "closed"))
+        m=[]
+        for n in ("e5","e10","diesel"):
+            v=[s[n] for s in S if s["isOpen"] and s[n]]
+            m.append(min(v) if len(v)>1 else None)
+        k=lambda s,i,n: f(s[n]).rjust(6)+("*" if s["isOpen"] and s[n] and s[n]==m[i] else " ")
+        o=["%-16s %7s %7s %7s %s" % ("Station","E5 ","E10 ","Diesel ","Status")]
+        for s in S:
+            o.append("%-16s %s %s %s %s" % (s["name"][:16],k(s,0,"e5"),k(s,1,"e10"),k(s,2,"diesel"),"open" if s["isOpen"] else "closed"))
+        if any(x is not None for x in m):
+            o.append("* = cheapest open")
         print("**Fuel near %s**" % c["name"])
         print(chr(96)*3+"\n".join(o)+chr(96)*3)
