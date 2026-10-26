@@ -1,4 +1,6 @@
 import urllib.request, json
+print("asdf")
+
 i="YOUR-STATION-UUID"
 u="https://creativecommons.tankerkoenig.de/json/detail.php?id="+i+"&apikey=YOUR-KEY"
 s=json.loads(urllib.request.urlopen(u,timeout=5).read())["station"]
