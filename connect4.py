@@ -96,4 +96,4 @@ elif len(a) == 1 and a[0] in ("1", "2", "3", "4", "5", "6", "7"):
             else:
                 s["c4"] = "".join("E" if ch == " " else ch for ch in b)
 else:
-    print("Invalid input! Use a column number from 1 to 7, or clear")
+    print("Invalid input. Use a column number from 1 to 7, or clear")
