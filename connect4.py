@@ -63,7 +63,7 @@ def show(b):
     k = chr(65039) + chr(8419)
     sym = (chr(9898), chr(128308), chr(128993))
     rows = ["".join(sym[" XO".index(b[r * W + c])] for c in range(W)) for r in range(H)]
-    print("".join(str(i) + k for i in range(1, W + 1)) + N + N.join(rows))
+    print("```" + N + "".join(str(i) + k for i in range(1, W + 1)) + N + N.join(rows) + N + "```")
 def end(msg):
     s["c4"] = "E" * (W * H)
     print(msg)
@@ -96,4 +96,4 @@ elif len(a) == 1 and a[0] in ("1", "2", "3", "4", "5", "6", "7"):
             else:
                 s["c4"] = "".join("E" if ch == " " else ch for ch in b)
 else:
-    print("Invalid input. Use a column number from 1 to 7, or clear")
+    print("Invalid input! Use a column number from 1 to 7, or clear")
