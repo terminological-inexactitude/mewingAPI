@@ -5,10 +5,10 @@ castle dragon wizard sorcerer knight goblin banner treasure pirate privateer
 island volcano jungle desert glacier forest mountain valley river canyon cloud thunder lightning rainbow blizzard 
 lantern compass campfire anchor voyage journey mystery puzzle riddle shadow button shirt parka 
 planet galaxy comet rocket orbit sattelite meteor eclipse astronaut telescope 
-gravity photon quantum magnet crystal diamond emerald copper silver bronze 
-guitar piano violin trumpet melody rhythm harmony chorus 
+gravity photon quantum magnet crystal diamond emerald copper silver bronze platinum quicksilver
+guitar piano violin trumpet trombone theremin melody rhythm harmony chorus 
 circus theater painter sculpture 
-bicycle tractor submarine 
+bicycle tractor yellow submarine lorry
 chocolate cinnamon pumpkin blueberry sandwich cheese lemonade pancake sausage peanut 
 penguin giraffe elephant dolphin octopus butterfly hedgehog squirrel kangaroo flamingo gerbil""".split()
 MAX = 6
