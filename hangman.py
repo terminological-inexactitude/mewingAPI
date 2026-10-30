@@ -1,15 +1,16 @@
 import random, string
-WORDS = """python discord keyboard circuit voltage resistor capacitor firmware compiler pointer register
-interrupt bootloader oscillator transistor microchip solder breadboard antenna sensor battery current signal
-memory kernel thread socket packet router binary syntax variable function library network backup cursor
-button window monitor laptop server cloud pixel cookie banner castle dragon wizard knight goblin treasure
-pirate island volcano jungle desert glacier harbor lantern compass anchor voyage journey mystery puzzle
-riddle shadow thunder lightning rainbow blizzard meadow orchard garden bridge tunnel mountain valley river
-forest canyon planet galaxy comet rocket orbit meteor eclipse astronaut telescope gravity photon quantum
-magnet crystal diamond emerald copper silver bronze guitar piano violin trumpet melody rhythm harmony
-chorus circus theater painter sculpture bicycle tractor submarine lighthouse windmill campfire pancake
-chocolate cinnamon pumpkin blueberry sandwich cheese lemonade penguin giraffe elephant dolphin octopus
-butterfly hedgehog squirrel kangaroo flamingo""".split()
+WORDS = """circuit voltage current signal resistor capacitor inductor oscillator transistor breadboard sensor battery memory router binary firmware pointer register variable function library network 
+garden bridge meadow orchard tunnel window lighthouse windmill campfire 
+banner castle dragon wizard knight goblin treasure pirate 
+island volcano jungle desert glacier forest mountain valley river canyon cloud thunder lightning rainbow blizzard 
+harbor lantern compass anchor voyage journey mystery puzzle riddle shadow button shirt parka 
+planet galaxy comet rocket orbit sattelite meteor eclipse astronaut telescope 
+gravity photon quantum magnet crystal diamond emerald copper silver bronze 
+guitar piano violin trumpet melody rhythm harmony chorus 
+circus theater painter sculpture 
+bicycle tractor submarine 
+chocolate cinnamon pumpkin blueberry sandwich cheese lemonade pancake sausage peanut 
+penguin giraffe elephant dolphin octopus butterfly hedgehog squirrel kangaroo flamingo gerbil""".split()
 MAX = 6
 s = discord["storage"]["user"]
 a = discord["variables"]["__argsString"].lower().split()
