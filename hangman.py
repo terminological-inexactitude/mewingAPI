@@ -1,9 +1,9 @@
 import random, string
 WORDS = """circuit voltage current signal resistor capacitor inductor oscillator transistor breadboard sensor battery memory router binary firmware pointer register variable function library network 
-garden bridge meadow orchard tunnel window lighthouse windmill campfire 
-banner castle dragon wizard knight goblin treasure pirate 
+garden bridge motorway meadow orchard tunnel window harbor lighthouse windmill  
+castle dragon wizard sorcerer knight goblin banner treasure pirate privateer 
 island volcano jungle desert glacier forest mountain valley river canyon cloud thunder lightning rainbow blizzard 
-harbor lantern compass anchor voyage journey mystery puzzle riddle shadow button shirt parka 
+lantern compass campfire anchor voyage journey mystery puzzle riddle shadow button shirt parka 
 planet galaxy comet rocket orbit sattelite meteor eclipse astronaut telescope 
 gravity photon quantum magnet crystal diamond emerald copper silver bronze 
 guitar piano violin trumpet melody rhythm harmony chorus 
@@ -12,7 +12,7 @@ bicycle tractor submarine
 chocolate cinnamon pumpkin blueberry sandwich cheese lemonade pancake sausage peanut 
 penguin giraffe elephant dolphin octopus butterfly hedgehog squirrel kangaroo flamingo gerbil""".split()
 MAX = 6
-s = discord["storage"]["user"]
+s = discord["storage"]["channel"]
 a = discord["variables"]["__argsString"].lower().split()
 N = chr(10)
 def art(m):
