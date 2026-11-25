@@ -1,17 +1,17 @@
 import random, string
 WORDS = """circuit voltage current resistor capacitor inductor transistor diode rectifier signal oscillator breadboard sensor battery memory router binary firmware pointer register variable function network 
 garden bridge motorway tunnel window harbor lighthouse windmill 
-jester wizard alchemist sorcerer privateer inquisitor 
-island volcano prairie jungle desert glacier forest mountain valley river canyon meadow orchard 
-cloud thunder lightning rainbow blizzard fog 
+jester wizard alchemist sorcerer privateer inquisitor executioner 
+island volcano prairie jungle desert glacier forest mountain valley riverbed canyon meadow orchard 
+cloud thunderbolt lightning rainbow blizzard fog 
 lantern compass campfire anchor guillotine shadow puzzle journey mystery riddle voyage 
-button shirt parka bracelet 
+trousers shirt button cape parka bracelet hat kilt 
 planet galaxy comet rocket orbit satellite meteor shuttle astronaut glider telescope syzygy equinox eclipse solstice azimuth 
 gravity photon quantum magnet ultrasonic 
 crystal diamond emerald copper silver bronze platinum quicksilver 
-guitar piano violin trumpet trombone theremin melody rhythm harmony chorus 
+bagpipe theremin guitar piano cello violin trumpet trombone melody rhythm harmony chorus 
 opera theater circus painter sculpture poetry 
-tractor lorry diesel bicycle yellow submarine 
+tractor lorry diesel bicycle yellow submarine zeppelin 
 pickle lemon waffle cake pancake chocolate cinnamon pumpkin blueberry sandwich cheese lemonade coffee sausage peanut 
 birdwatching fishing beekeeping hunting whittling crocheting 
 penguin giraffe elephant dolphin octopus butterfly hedgehog squirrel kangaroo flamingo gerbil""".split()
