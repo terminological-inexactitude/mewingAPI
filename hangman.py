@@ -13,8 +13,8 @@ crystal diamond emerald copper silver bronze platinum quicksilver
 guitar piano violin trumpet trombone theremin melody rhythm harmony chorus 
 opera theater circus painter sculpture poetry 
 tractor lorry diesel bicycle yellow submarine 
-pickle lemon cake chocolate cinnamon pumpkin blueberry sandwich cheese lemonade pancake sausage peanut 
-birdwatching fishing beekeeping whittling 
+pickle lemon waffle cake pancake chocolate cinnamon pumpkin blueberry sandwich cheese lemonade coffee sausage peanut 
+birdwatching fishing beekeeping hunting whittling crocheting 
 penguin giraffe elephant dolphin octopus butterfly hedgehog squirrel kangaroo flamingo gerbil""".split()
 MAX = 6
 s = discord["storage"]["channel"]
