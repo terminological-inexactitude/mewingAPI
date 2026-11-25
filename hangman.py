@@ -6,10 +6,11 @@ island volcano prairie jungle desert glacier forest mountain valley river canyon
 cloud thunder lightning rainbow blizzard fog 
 lantern compass campfire anchor voyage journey mystery puzzle riddle shadow button shirt parka 
 planet galaxy comet rocket orbit satellite meteor astronaut telescope syzygy equinox eclipse solstice azimuth 
-gravity photon quantum magnet crystal diamond emerald copper silver bronze platinum quicksilver 
+gravity photon quantum magnet ultrasonic 
+crystal diamond emerald copper silver bronze platinum quicksilver 
 guitar piano violin trumpet trombone theremin melody rhythm harmony chorus 
 opera theater circus painter sculpture poetry 
-tractor lorry bicycle yellow submarine glider shuttle lander 
+tractor lorry diesel bicycle yellow submarine glider shuttle  
 chocolate cinnamon pumpkin blueberry sandwich cheese lemonade pancake sausage peanut 
 birdwatching fishing beekeeping 
 penguin giraffe elephant dolphin octopus butterfly hedgehog squirrel kangaroo flamingo gerbil""".split()
