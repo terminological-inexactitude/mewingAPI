@@ -1,10 +1,12 @@
 import random, string
-WORDS = """circuit voltage current inductance signal resistor capacitor inductor oscillator transistor breadboard sensor battery memory router binary firmware pointer register variable function network 
+WORDS = 
+"""circuit voltage current inductance signal resistor capacitor inductor oscillator transistor breadboard sensor battery memory router binary firmware pointer register variable function network 
 garden bridge motorway tunnel window harbor lighthouse windmill 
 jester wizard alchemist sorcerer privateer inquisitor 
 island volcano prairie jungle desert glacier forest mountain valley river canyon meadow orchard 
 cloud thunder lightning rainbow blizzard fog 
-lantern compass campfire anchor voyage journey mystery puzzle riddle shadow button shirt parka 
+lantern compass campfire anchor guillotine shadow puzzle journey mystery riddle voyage 
+button shirt parka bracelet 
 planet galaxy comet rocket orbit satellite meteor shuttle astronaut glider telescope syzygy equinox eclipse solstice azimuth 
 gravity photon quantum magnet ultrasonic 
 crystal diamond emerald copper silver bronze platinum quicksilver 
