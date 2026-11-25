@@ -1,15 +1,16 @@
 import random, string
-WORDS = """circuit voltage current signal resistor capacitor inductor oscillator transistor breadboard sensor battery memory router binary firmware pointer register variable function library network 
+WORDS = """circuit voltage current inductance signal resistor capacitor inductor oscillator transistor breadboard sensor battery memory router binary firmware pointer register variable function network 
 garden bridge motorway tunnel window harbor lighthouse windmill 
 castle dragon wizard sorcerer knight goblin banner treasure pirate privateer 
 island volcano jungle desert glacier forest mountain valley river canyon meadow orchard cloud thunder lightning rainbow blizzard 
 lantern compass campfire anchor voyage journey mystery puzzle riddle shadow button shirt parka 
-planet galaxy comet rocket orbit satellite meteor astronaut telescope syzygy equinox eclipse 
+planet galaxy comet rocket orbit satellite meteor astronaut telescope syzygy equinox eclipse solstice azimuth 
 gravity photon quantum magnet crystal diamond emerald copper silver bronze platinum quicksilver 
 guitar piano violin trumpet trombone theremin melody rhythm harmony chorus 
 opera theater circus painter sculpture poetry 
-tractor lorry bicycle yellow submarine 
+tractor lorry bicycle yellow submarine glider shuttle lander 
 chocolate cinnamon pumpkin blueberry sandwich cheese lemonade pancake sausage peanut 
+birdwatching fishing beekeeping 
 penguin giraffe elephant dolphin octopus butterfly hedgehog squirrel kangaroo flamingo gerbil""".split()
 MAX = 6
 s = discord["storage"]["channel"]
