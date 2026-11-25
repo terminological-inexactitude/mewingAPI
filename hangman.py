@@ -5,14 +5,14 @@ jester wizard alchemist sorcerer privateer inquisitor
 island volcano prairie jungle desert glacier forest mountain valley river canyon meadow orchard 
 cloud thunder lightning rainbow blizzard fog 
 lantern compass campfire anchor voyage journey mystery puzzle riddle shadow button shirt parka 
-planet galaxy comet rocket orbit satellite meteor astronaut telescope syzygy equinox eclipse solstice azimuth 
+planet galaxy comet rocket orbit satellite meteor shuttle astronaut glider telescope syzygy equinox eclipse solstice azimuth 
 gravity photon quantum magnet ultrasonic 
 crystal diamond emerald copper silver bronze platinum quicksilver 
 guitar piano violin trumpet trombone theremin melody rhythm harmony chorus 
 opera theater circus painter sculpture poetry 
-tractor lorry diesel bicycle yellow submarine glider shuttle  
-chocolate cinnamon pumpkin blueberry sandwich cheese lemonade pancake sausage peanut 
-birdwatching fishing beekeeping 
+tractor lorry diesel bicycle yellow submarine 
+pickle lemon cake chocolate cinnamon pumpkin blueberry sandwich cheese lemonade pancake sausage peanut 
+birdwatching fishing beekeeping whittling 
 penguin giraffe elephant dolphin octopus butterfly hedgehog squirrel kangaroo flamingo gerbil""".split()
 MAX = 6
 s = discord["storage"]["channel"]
