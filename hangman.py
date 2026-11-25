@@ -1,6 +1,5 @@
 import random, string
-WORDS = 
-"""circuit voltage current resistor capacitor inductor transistor diode rectifier signal oscillator breadboard sensor battery memory router binary firmware pointer register variable function network 
+WORDS = """circuit voltage current resistor capacitor inductor transistor diode rectifier signal oscillator breadboard sensor battery memory router binary firmware pointer register variable function network 
 garden bridge motorway tunnel window harbor lighthouse windmill 
 jester wizard alchemist sorcerer privateer inquisitor 
 island volcano prairie jungle desert glacier forest mountain valley river canyon meadow orchard 
