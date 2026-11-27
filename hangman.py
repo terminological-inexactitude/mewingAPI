@@ -6,7 +6,7 @@ island volcano prairie jungle desert glacier forest mountain valley riverbed can
 cloud thunderbolt lightning rainbow blizzard fog 
 lantern compass campfire anchor guillotine shadow puzzle journey mystery riddle voyage 
 trousers shirt button cape parka bracelet hat kilt 
-planet galaxy comet rocket orbit satellite meteor shuttle astronaut glider telescope syzygy equinox eclipse solstice azimuth 
+planet galaxy comet rocket orbit satellite meteor shuttle astronaut extraterrestrial glider telescope syzygy equinox eclipse solstice azimuth 
 gravity photon quantum magnet ultrasonic 
 crystal diamond emerald copper silver bronze platinum quicksilver 
 bagpipe theremin guitar piano cello violin trumpet trombone melody rhythm harmony chorus 
